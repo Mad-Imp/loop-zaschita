@@ -1,0 +1,40 @@
+$primary: #4673b5;
+$font-primary: #333333;
+
+.nav {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  text-decoration: none;
+  list-style-type: none;
+  padding: 20px;
+  border-top: 1px solid rgba(139, 138, 138, 0.27);
+  border-bottom: 1px solid rgba(139, 138, 138, 0.27);
+}
+
+.item {
+  font-size: 1em;
+}
+
+.item a {
+  text-decoration: none;
+  color: $font-primary;
+}
+
+.item:not(:last-child) {
+  margin-right: 1em;
+}
+
+.item:hover {
+  border-bottom: 2px solid $primary;
+}
+
+.main {
+  border-bottom: 2px solid $primary;
+}
+
+
+
+

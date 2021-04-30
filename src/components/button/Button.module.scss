@@ -1,0 +1,23 @@
+$primary: #4673b5;
+
+.btn {
+  background-color: transparent;
+  color: white;
+  padding: 10px 15px;
+  border: 2px solid white;
+  border-radius: 5px;
+  font-size: 1em;
+  transition-duration: .5s;
+}
+
+.btn:hover {
+  background-color: white;
+  color: $primary;
+  transition-duration: .5s;
+  cursor: pointer;
+}
+
+.btn:focus,
+.btn:active {
+  outline: white;
+}

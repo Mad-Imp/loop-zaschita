@@ -1,14 +1,17 @@
-import styles from './Header.module.scss';
-import Button from '@material-ui/core/Button';
+// import styles from './Header.module.scss';
+import Contacts from "../contacts/Contacts";
+import Hero from "../hero/Hero";
+import Navbar from "../navbar/Navbar";
+
 
 function Header() {
   return (
-    <div>
-      <h1 className={styles["color-style"]}>ЛООП Защита</h1>
-      <Button variant="contained" color="primary">
-        Hello World
-      </Button>
-    </div>
+      <>
+        <Contacts/>
+        <Hero/>
+        <Navbar/>
+      </>
+
   );
 }
 
