@@ -1,4 +1,4 @@
-$primary: #4673b5;
+@import "../../scss/variables.scss";
 
 .btn {
   background-color: transparent;
@@ -12,7 +12,7 @@ $primary: #4673b5;
 
 .btn:hover {
   background-color: white;
-  color: $primary;
+  color: $primaryColor;
   transition-duration: .5s;
   cursor: pointer;
 }

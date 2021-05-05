@@ -1,9 +1,8 @@
-$primary: #4673b5;
-$font-primary: #333333;
+@import "../../scss/variables.scss";
 
 .nav {
-  max-width: 1080px;
-  margin: 0 auto;
+  max-width: $widthContent;
+  margin: 0 auto 30px;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -20,7 +19,7 @@ $font-primary: #333333;
 
 .item a {
   text-decoration: none;
-  color: $font-primary;
+  color: $fontColor;
 }
 
 .item:not(:last-child) {
@@ -28,11 +27,11 @@ $font-primary: #333333;
 }
 
 .item:hover {
-  border-bottom: 2px solid $primary;
+  border-bottom: 2px solid $primaryColor;
 }
 
 .main {
-  border-bottom: 2px solid $primary;
+  border-bottom: 2px solid $primaryColor;
 }
 
 
