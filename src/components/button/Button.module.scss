@@ -1,0 +1,23 @@
+@import "../../scss/variables.scss";
+
+.btn {
+  background-color: transparent;
+  color: white;
+  padding: 10px 15px;
+  border: 2px solid white;
+  border-radius: 5px;
+  font-size: 1em;
+  transition-duration: .5s;
+}
+
+.btn:hover {
+  background-color: white;
+  color: $primaryColor;
+  transition-duration: .5s;
+  cursor: pointer;
+}
+
+.btn:focus,
+.btn:active {
+  outline: white;
+}
