@@ -1,0 +1,35 @@
+@import "../../scss/variables";
+
+
+.contacts {
+  max-width: 400px;
+
+  .title {
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+
+    .icon {
+      margin-right: 1rem;
+      color: $primaryColor;
+      font-size: 1.7rem;
+    }
+
+    p {
+      padding: 0.5rem 0;
+      font-size: 1.2rem;
+      line-height: 1.6rem;
+
+      a {
+        text-decoration: none;
+        color: $fontColor;
+      }
+
+    }
+  }
+}
+

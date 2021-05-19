@@ -6,11 +6,11 @@ import Navbar from "../navbar/Navbar";
 
 function Header() {
   return (
-      <>
+      <header>
         <Contacts/>
         <Hero/>
         <Navbar/>
-      </>
+      </header>
 
   );
 }

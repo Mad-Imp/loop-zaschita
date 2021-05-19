@@ -1,5 +1,6 @@
 import styles from './Main.module.scss';
-import Cards from '../cards/Cards';
+import Cards from '../../components/cards/Cards';
+
 
 function Main() {
   return (
