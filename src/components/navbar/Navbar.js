@@ -5,7 +5,7 @@ function Navbar() {
     return (
         <>
             <ul className={styles.nav}>
-                <li className={`${styles.item} ${styles.main}`}><Link to={"/"}>Главная</Link></li>
+                <li className={`${styles.item} ${styles.active}`}><Link to={"/"}>Главная</Link></li>
                 <li className={styles.item}><Link to={"/about"}>Об организации</Link></li>
                 <li className={styles.item}><Link to={"/news"}>Новости</Link></li>
                 <li className={styles.item}><Link to={"/services"}>Услуги</Link></li>
