@@ -1,4 +1,4 @@
-@import "../../scss/variables.scss";
+@import "../../../../scss/variables";
 
 .wrapper {
   background-color: $primaryColor;
@@ -35,3 +35,7 @@
   margin-right: 30px;
 }
 
+.icon {
+  color: #fff;
+  margin-right: 10px;
+}
