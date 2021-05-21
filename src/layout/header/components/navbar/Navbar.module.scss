@@ -1,4 +1,4 @@
-@import "../../scss/variables.scss";
+@import "../../../../scss/variables";
 
 .nav {
   max-width: $widthContent;
@@ -30,7 +30,7 @@
   border-bottom: 2px solid $primaryColor;
 }
 
-.main {
+.active {
   border-bottom: 2px solid $primaryColor;
 }
 

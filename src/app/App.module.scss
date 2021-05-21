@@ -1,4 +1,4 @@
-@import "../../scss/variables";
+@import "../scss/variables";
 
 * {
   margin: 0;
@@ -13,5 +13,9 @@ body {
 }
 
 .content {
+}
 
+.content_route {
+  max-width: $widthContent;
+  margin: 0 auto;
 }
