@@ -12,8 +12,12 @@ function App() {
                 <Header/>
                 <main className={styles.content_route}>
                     <Switch>
-                        <Route exact path="/"> <Main/> </Route>
-                        <Route path="/contacts"> <ContactsPage/> </Route>
+                        <Route exact path="/">
+                            <Main/>
+                        </Route>
+                        <Route path="/contacts">
+                            <ContactsPage/>
+                        </Route>
                     </Switch>
                 </main>
             </Router>

@@ -45,7 +45,7 @@ export default function Form() {
     const onSubmit = (data) => {
         console.log(data);
 
-        const res = fetch('https://jsonplaceholder.typicode.com/posts', {
+        const res = fetch('/', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json;charset=utf-8'

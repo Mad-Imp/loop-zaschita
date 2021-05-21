@@ -1,4 +1,4 @@
-import styles from './Dashboard.module.scss'
+import styles from './MenuSection.module.scss'
 
 function MenuSection() {
   return (

@@ -1,8 +1,4 @@
-@import "../../scss/variables.scss";
-
-.dash {
-  display: flex;
-}
+@import "../../../../scss/variables";
 
 .menu {
   color: #e7e5e2;
@@ -30,14 +26,6 @@
       cursor: pointer;
     }
   }
-}
-
-.menuSection {
-  min-width: calc(100% - #{$dashboardMenuWidth});
-  height: 100vh;
-  background: #f1f1f1;
-  padding: 10px;
-  font-size: 0.8rem;
 }
 
 .wrap {
