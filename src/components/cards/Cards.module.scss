@@ -4,7 +4,12 @@
   position: absolute;
   width: 320px;
   height: 700px;
-  background: #4673b5;
+  //background: #4673b5;
   right: 0;
   top: 0;
+
+  & .wrap {
+    height: 100%;
+    width: 100%;
+  }
 }
