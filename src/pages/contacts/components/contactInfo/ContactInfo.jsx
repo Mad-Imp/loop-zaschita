@@ -1,4 +1,4 @@
-import styles from "./Contacts.module.scss";
+import styles from "./ContactInfo.module.scss";
 import CallIcon from '@material-ui/icons/Call';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import LocationOnIcon from '@material-ui/icons/LocationOn';

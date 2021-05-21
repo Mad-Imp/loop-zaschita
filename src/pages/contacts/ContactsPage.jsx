@@ -1,6 +1,6 @@
-import Contacts from "../../components/contact/Contacts";
-import Map from "../../components/contact/Map";
-import Form from "../../components/contact/Form";
+import Contacts from "./components/contactInfo/ContactInfo";
+import Map from "./components/map/Map";
+import Form from "../../components/form/Form";
 import styles from './ContactsPage.module.scss';
 
 export default function ContactsPage() {

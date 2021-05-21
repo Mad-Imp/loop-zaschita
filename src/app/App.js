@@ -1,7 +1,7 @@
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import styles from './App.module.scss';
 import '../scss/variables.scss'
-import Header from '../components/header/Header';
+import Header from '../layout/header/Header';
 import Main from '../pages/main/Main';
 import ContactsPage from '../pages/contacts/ContactsPage';
 

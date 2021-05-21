@@ -1,8 +1,8 @@
 import TextField from '@material-ui/core/TextField';
 import {makeStyles} from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
-import Button from '@material-ui/core/Button';
 import styles from './Form.module.scss';
 import { useForm } from "react-hook-form";
 
@@ -57,7 +57,6 @@ export default function Form() {
 
     };
 
-
     return (
         <div className={styles.form}>
             <h2>Задайте свой вопрос</h2>
@@ -100,7 +99,7 @@ export default function Form() {
                         variant="contained"
                         color="primary"
                         type="submit"
-                        >
+                >
                     Отправить
                 </Button>
             </form>
