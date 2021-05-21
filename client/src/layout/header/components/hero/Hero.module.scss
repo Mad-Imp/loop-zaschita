@@ -1,0 +1,30 @@
+@import "../../../../scss/variables";
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: $widthContent;
+  max-height: 50vh;
+  padding: 20px 0;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 1.2rem;
+  max-width: 300px;
+}
+
+.name {
+  text-transform: uppercase;
+  font-size: 2.2rem;
+  color: #444343;
+}
+
+.description {
+  max-width: 360px;
+  font-weight: 500;
+  line-height: 1.35rem;
+}
+
