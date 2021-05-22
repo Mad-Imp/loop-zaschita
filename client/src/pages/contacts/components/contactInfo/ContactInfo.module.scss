@@ -33,3 +33,22 @@
   }
 }
 
+
+@media (max-width: 932px) {
+  .contacts {
+    margin: 0 auto 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.7rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 355px) {
+  .title {
+    font-size: 1.5rem;
+  }
+}
