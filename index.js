@@ -2,13 +2,9 @@ const express = require('express')
 const app = express()
 
 app.use(express.json({extended: true}))
-const PORT = 5000
+const PORT = process.env.PORT || 5000
 
-
-
-app.post('/', (req, res) => {
-  console.log(req.body)
-})
+app.use('/api/auth', require('./routes/auth'))
 
 app.listen(PORT, () => {
   console.log('App has been started', PORT)
