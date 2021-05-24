@@ -3,7 +3,10 @@ import styles from './App.module.scss';
 import '../scss/variables.scss'
 import Header from '../layout/header/Header';
 import Main from '../pages/main/Main';
+import Services from "../pages/services/Services";
 import ContactsPage from '../pages/contacts/ContactsPage';
+import Footer from "../layout/footer/Footer";
+
 
 function App() {
     return (
@@ -15,11 +18,15 @@ function App() {
                         <Route exact path="/">
                             <Main/>
                         </Route>
+                        <Route path="/services">
+                            <Services/>
+                        </Route>
                         <Route path="/contacts">
                             <ContactsPage/>
                         </Route>
                     </Switch>
                 </main>
+                <Footer/>
             </Router>
         </div>
     );
