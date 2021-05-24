@@ -20,8 +20,11 @@
   },
   "homepage": "https://github.com/vadimObanin/loop-zaschita#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "concurrently": "^6.1.0",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "mysql": "^2.18.1"
   },
   "devDependencies": {
