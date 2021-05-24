@@ -1,10 +1,10 @@
 import TextField from '@material-ui/core/TextField';
 import {makeStyles} from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import { yupResolver } from '@hookform/resolvers/yup';
+import {yupResolver} from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import styles from './Form.module.scss';
-import { useForm } from "react-hook-form";
+import {useForm} from "react-hook-form";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -14,11 +14,14 @@ const useStyles = makeStyles((theme) => ({
             flexDirection: 'column',
             width: '100%'
         },
-    marginTop: '2rem '
+        marginTop: '2rem '
     },
     button: {
         width: '100%',
         marginLeft: 8
+    },
+    input: {
+        boxSizing: 'border-box'
     }
 
 }));
@@ -37,25 +40,24 @@ const schema = yup.object().shape({
 
 export default function Form() {
     const classes = useStyles();
-    const { register, handleSubmit, formState: { errors }} = useForm({
+    const {register, handleSubmit, formState: {errors}} = useForm({
         mode: 'onBlur',
         resolver: yupResolver(schema)
     });
 
-    const onSubmit = (data) => {
+    const onSubmit = (data, e) => {
         console.log(data);
 
-        const res = fetch('/', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json;charset=utf-8'
-                    },
-                    body: JSON.stringify(data)
-                    })
-                    .then((response) => response.json())
-                    .then((json) => console.log(json));
-
+        fetch('/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json;charset=utf-8'
+            },
+            body: JSON.stringify(data)
+        })
+           .finally( e.target.reset())
     };
+
 
     return (
         <div className={styles.form}>
@@ -71,6 +73,7 @@ export default function Form() {
                                {...register('name')}
                                error={!!errors.name}
                                helperText={errors?.name?.message}
+                               className={classes.input}
                     />
                     <TextField required
                                id="outlined-search"
