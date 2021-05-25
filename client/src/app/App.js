@@ -1,7 +1,6 @@
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import styles from './App.module.scss';
 import '../scss/variables.scss'
-import Header from '../layout/header/Header';
 import Main from '../pages/main/Main';
 import Services from "../pages/services/Services";
 import ContactsPage from '../pages/contacts/ContactsPage';
@@ -10,7 +9,6 @@ import {About} from '../pages/about/About';
 import {News} from '../pages/news/News';
 import {Dashboard} from '../pages/dashboard/Dashboard';
 import {useAuth} from '../hooks/auth.hook';
-import Footer from "../layout/footer/Footer";
 
 
 function App() {
