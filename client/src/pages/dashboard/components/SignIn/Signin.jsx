@@ -2,7 +2,8 @@ import {makeStyles} from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import styles from './Signin.module.scss'
 import Button from '@material-ui/core/Button';
-import {useState} from 'react';
+import {useContext, useState} from 'react';
+import {AuthContext} from '../../../../context/AuthContext';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,11 +17,12 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-function SignIn() {
+function SignIn(props) {
 
   const classes = useStyles();
   const [email, setEmail] = useState('')
   const [pass, setPass] = useState('')
+  const auth = useContext(AuthContext)
 
   const emailhandler = (e) => {
     setEmail(e.target.value)
@@ -32,17 +34,26 @@ function SignIn() {
 
   const onSubmit = (e) => {
     e.preventDefault()
-    const data = {
+    let data = {
       email: email,
       password: pass
     }
 
-    fetch('/api/login')
+    fetch('/api/login', {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json'
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      }
+    })
       .then(response => response.json())
-      .then(data => console.log(data))
+      .then(data => {
+        props.login(data.token, data.role, data.id)
+      })
 
-    setEmail('')
-    setPass('')
+    // setEmail('')
+    // setPass('')
   }
 
   return (
@@ -55,7 +66,7 @@ function SignIn() {
             type='email'
             onChange={emailhandler}
             value={email}
-            id="standard-basic"
+
             label="Email"
             name='email'
           />
@@ -63,7 +74,7 @@ function SignIn() {
             type='password'
             onChange={passHandler}
             value={pass}
-            id="standard-basic"
+
             label="Пароль"
             name='password'
           />

@@ -30,9 +30,10 @@ exports.login = async (req, res) => {
         })
         const data = {
           token: token,
-          role: 'admin'
+          role: 'admin',
+          id: id
         }
-        console.log(data)
+        res.send(data)
       }
     })
 
