@@ -1,15 +1,25 @@
 import styles from './Navbar.module.scss';
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 function Navbar() {
     return (
         <>
             <ul className={styles.nav}>
-                <li className={`${styles.item} ${styles.active}`}><Link to={"/"}>Главная</Link></li>
-                <li className={styles.item}><Link to={"/about"}>Об организации</Link></li>
-                <li className={styles.item}><Link to={"/news"}>Новости</Link></li>
-                <li className={styles.item}><Link to={"/services"}>Услуги</Link></li>
-                <li className={styles.item}><Link to={"/contacts"}>Контакты</Link></li>
+                <li className={styles.item}>
+                    <NavLink exact to={"/"} activeStyle={{borderBottom: '2px solid #4673B5FF'}}>Главная</NavLink>
+                </li>
+                <li className={styles.item}>
+                    <NavLink to={"/about"} activeStyle={{borderBottom: '2px solid #4673B5FF'}}>Об организации</NavLink>
+                </li>
+                <li className={styles.item}>
+                    <NavLink to={"/news"} activeStyle={{borderBottom: '2px solid #4673B5FF'}}>Новости</NavLink>
+                </li>
+                <li className={styles.item}>
+                    <NavLink to={"/services"} activeStyle={{borderBottom: '2px solid #4673B5FF'}}>Услуги</NavLink>
+                </li>
+                <li className={styles.item}>
+                    <NavLink to={"/contacts"} activeStyle={{borderBottom: '2px solid #4673B5FF'}}>Контакты</NavLink>
+                </li>
 
             </ul>
         </>

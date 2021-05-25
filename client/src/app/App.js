@@ -1,15 +1,17 @@
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import styles from './App.module.scss';
 import '../scss/variables.scss'
-import Header from '../layout/components/header/Header';
+import Header from '../layout/header/Header';
 import Main from '../pages/main/Main';
+import Services from "../pages/services/Services";
 import ContactsPage from '../pages/contacts/ContactsPage';
 import {Layout} from '../layout/Layout';
 import {About} from '../pages/about/About';
 import {News} from '../pages/news/News';
-
 import {Dashboard} from '../pages/dashboard/Dashboard';
 import {useAuth} from '../hooks/auth.hook';
+import Footer from "../layout/footer/Footer";
+
 
 function App() {
   const {token, login, logout, id, role} = useAuth()
@@ -33,7 +35,7 @@ function App() {
                   <News/>
                 </Route>
                 <Route path="/services">
-                  {/*<Services/>*/}
+                  <Services/>
                 </Route>
                 <Route path="/dashboard">
                   <Dashboard/>
