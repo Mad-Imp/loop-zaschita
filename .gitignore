@@ -6,6 +6,8 @@ client/node_modules
 client/.pnp
 .idea
 .pnp.js
+.env
+
 
 # testing
 client/coverage

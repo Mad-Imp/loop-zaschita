@@ -23,7 +23,7 @@ export default function Contacts() {
             </div>
             <div className={styles.content}>
                 <ScheduleIcon className={styles.icon}/>
-                <p>График работы: ПН-ПТ: 10:00 - 13:00</p>
+                <p>График работы: Пн-Пт: 10:00 - 13:00</p>
             </div>
         </div>
     )
