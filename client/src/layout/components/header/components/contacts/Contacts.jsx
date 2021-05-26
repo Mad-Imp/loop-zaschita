@@ -1,6 +1,6 @@
 import styles from "./Contacts.module.scss";
-import logo from "../../../../assets/logo.png";
-import Button from "../../../../components/button/Button";
+import logo from "../../../../../assets/logo.png";
+import Button from "../../../../../components/button/Button";
 import CallIcon from '@material-ui/icons/Call';
 
 function Contacts() {

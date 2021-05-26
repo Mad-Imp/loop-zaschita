@@ -1,5 +1,6 @@
 @import "../../scss/variables";
 
-.dash {
-  display: flex;
+.wrap {
+  max-width: $widthContent;
+  margin: 0 auto;
 }

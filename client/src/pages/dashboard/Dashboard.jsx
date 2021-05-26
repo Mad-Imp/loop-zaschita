@@ -1,21 +1,33 @@
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import ControlPanel from './components/ControlPanel/ControlPanel';
+import {SignIn} from './components/SignIn/Signin';
 import styles from './Dashboard.module.scss'
-import {Menu} from './components/Menu/Menu';
-import {News} from './components/MenuSection/components/News/News';
-import {AddNews} from './components/MenuSection/components/AddNews/AddNews';
-import {Media} from './components/MenuSection/components/Media/Media';
-import {AddMedia} from './components/MenuSection/components/AddMedia/AddMedia';
-import {MenuSection} from './components/MenuSection/MenuSection';
-
+import {useContext} from 'react';
+import {AuthContext} from '../../context/AuthContext';
+import {useAuth} from '../../hooks/auth.hook';
 
 function Dashboard() {
-  const apps = [<News/>]
-
+  const auth = useContext(AuthContext)
+  const {token, login, logout, id, role} = useAuth()
+  const isAuthenticated = !!token
   return (
-    <div className={styles.dash}>
-      <Menu/>
-      <MenuSection/>
-    </div>
+    <AuthContext.Provider value={{
+      token, login, logout, id, role, isAuthenticated
+    }}>
+      <div className={styles.wrap}>
+        <Router>
+          <Switch>
+            <Route path="/dashboard">
+              {(isAuthenticated) ?
+                <ControlPanel/> :
+                <SignIn login={login} token={token} id={id} role={role}/>
+              }
+            </Route>
+          </Switch>
+        </Router>
+      </div>
+    </AuthContext.Provider>
   )
 }
 
-export default Dashboard
+export {Dashboard}
