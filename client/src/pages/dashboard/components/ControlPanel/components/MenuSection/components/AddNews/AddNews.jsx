@@ -3,8 +3,9 @@ import styles from './AddNews.module.scss'
 function AddNews() {
 
   const upload = (e) => {
+    e.target.preventDefault()
     const file = e.target.files[0]
-    fetch('/saveImage', {
+    fetch('/upload', {
       method: 'POST',
       body: file
     })
@@ -19,9 +20,10 @@ function AddNews() {
 
   return (
     <div className={styles.wrap}>
-      <h1 contentEditable>Hello</h1>
-      <p contentEditable>dflskdjflsjdlfsjldfk</p>
-      <input name='myimage' onChange={upload} type="file"/>
+      <form action='/upload' method='POST' encType='multipart/form-data'>
+        <input name='myImage' type="file"/>
+        <button type='submit'>Отправить</button>
+      </form>
     </div>
   )
 }
