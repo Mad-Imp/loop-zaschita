@@ -1,5 +1,5 @@
 import styles from './AddNews.module.scss'
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import axios from 'axios';
 
 function AddNews() {
@@ -17,12 +17,21 @@ function AddNews() {
     let img = ''
     axios.post("/upload", data)
       .then(res => {
-        img = images.push(res.data.file)
+        return img = res.data.file
+      })
+      .then(data => {
+        let imgs = [...images]
+        imgs.push(data)
+        setImages(imgs)
       })
       .catch(err => console.log(err))
-    setImages(images.push(img))
-    console.log(images)
+
+
   }
+
+  useEffect(() => {
+    console.log(images)
+  })
 
   return (
     <div className={styles.wrap}>
@@ -30,7 +39,9 @@ function AddNews() {
         <input onChange={imageHandler} name='myImage' type="file"/>
       </form>
       <button onClick={send}>Отправить</button>
-
+      {images.map((img, index) => {
+        return <img src={img} key={index} alt='image'/>
+      })}
     </div>
   )
 }

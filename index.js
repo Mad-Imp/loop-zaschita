@@ -5,6 +5,11 @@ const multer = require('multer')
 const path = require('path')
 const cors = require('cors')
 
+const app = express()
+app.use(express.json({extended: true}))
+app.use(express.static('public'))
+app.use(express.static('public/uploads'))
+
 const storage = multer.diskStorage({
   destination: './public/uploads/',
   filename: function (req, file, cb) {
@@ -24,9 +29,7 @@ function checkFileType(file, cb) {
   }
 }
 
-const app = express()
-app.use(express.json({extended: true}))
-app.use(express.static('/public'))
+
 
 dotenv.config({path: './.env'})
 
@@ -52,6 +55,7 @@ app.use('/api', require('./routes/auth'))
 const upload = multer({ storage: storage, fileFilter: function (req, file, cb) {
     checkFileType(file, cb)
   } }).single("file")
+
 app.post('/upload', function (req, res, next) {
   upload(req, res, (err) => {
     if (err) { // результат работы функции проверки типа файла
@@ -66,7 +70,7 @@ app.post('/upload', function (req, res, next) {
       } else {
         res.send({
           msg: 'Файл загружен',
-          file: `uploads/${req.file.filename}`
+          file: `http://localhost:5000/${req.file.filename}`
         })
       }
     }
