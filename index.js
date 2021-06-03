@@ -3,6 +3,7 @@ const dotenv = require('dotenv')
 const mysql = require('mysql')
 const multer = require('multer')
 const path = require('path')
+const cors = require('cors')
 
 const storage = multer.diskStorage({
   destination: './public/uploads/',
@@ -10,13 +11,6 @@ const storage = multer.diskStorage({
     cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
   }
 })
-
-const upload = multer({
-  storage: storage,
-  fileFilter: function (req, file, cb) {
-    checkFileType(file, cb)
-  }
-}).single('myImage')
 
 function checkFileType(file, cb) {
   const filetypes = /jpeg|jpg|png|gif/;
@@ -54,7 +48,11 @@ db.connect((error) => {
 })
 
 app.use('/api', require('./routes/auth'))
-app.post("/upload", (req, res) => {
+
+const upload = multer({ storage: storage, fileFilter: function (req, file, cb) {
+    checkFileType(file, cb)
+  } }).single("file")
+app.post('/upload', function (req, res, next) {
   upload(req, res, (err) => {
     if (err) { // результат работы функции проверки типа файла
       res.send({
@@ -73,8 +71,8 @@ app.post("/upload", (req, res) => {
       }
     }
   })
-  console.log()
 })
+app.use(cors())
 
 app.listen(PORT, () => {
   console.log('App has been started', PORT)

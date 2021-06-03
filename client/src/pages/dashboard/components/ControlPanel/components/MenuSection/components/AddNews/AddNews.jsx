@@ -1,29 +1,36 @@
 import styles from './AddNews.module.scss'
+import {useState} from 'react';
+import axios from 'axios';
 
 function AddNews() {
 
-  const upload = (e) => {
-    e.target.preventDefault()
-    const file = e.target.files[0]
-    fetch('/upload', {
-      method: 'POST',
-      body: file
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log(data)
+  const [file, setFile] = useState('')
+  const [images, setImages] = useState([])
+
+  const imageHandler = (e) => {
+    setFile(e.target.files[0])
+  }
+
+  const send = (e) => {
+    const data = new FormData();
+    data.append("file", file)
+    let img = ''
+    axios.post("/upload", data)
+      .then(res => {
+        img = images.push(res.data.file)
       })
-      .catch(error => {
-        console.error(error)
-      })
+      .catch(err => console.log(err))
+    setImages(images.push(img))
+    console.log(images)
   }
 
   return (
     <div className={styles.wrap}>
-      <form action='/upload' method='POST' encType='multipart/form-data'>
-        <input name='myImage' type="file"/>
-        <button type='submit'>Отправить</button>
+      <form action='#'>
+        <input onChange={imageHandler} name='myImage' type="file"/>
       </form>
+      <button onClick={send}>Отправить</button>
+
     </div>
   )
 }
