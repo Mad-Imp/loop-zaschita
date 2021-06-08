@@ -50,9 +50,11 @@ const db = mysql.createPool({
 
 app.use('/api', require('./routes/auth'))
 
-const upload = multer({ storage: storage, fileFilter: function (req, file, cb) {
+const upload = multer({
+  storage: storage, fileFilter: function (req, file, cb) {
     checkFileType(file, cb)
-  } }).single("file")
+  }
+}).single("file")
 
 app.post('/upload', function (req, res, next) {
   upload(req, res, (err) => {
@@ -89,7 +91,7 @@ app.post('/api/publish', function (req, res, next) {
   let values = [
     [date, post.header, post.article, post.images],
   ];
-  db.query(sql, [values], function(err) {
+  db.query(sql, [values], function (err) {
     if (err) throw err;
     res.send({
       status: 200,
@@ -101,6 +103,23 @@ app.post('/api/publish', function (req, res, next) {
   //   status: 200,
   //   msg: 'Новость сохранена'
   // })
+})
+
+app.get('/api/news', (req, res) => {
+  let sql = "SELECT * FROM `news`"
+  db.query(sql, (err, results, fields) => {
+    if (err) throw err
+    res.send(results)
+  });
+})
+
+app.post('/api/delete', (req, res) => {
+  let id = req.body.id
+  let sql = `DELETE FROM news WHERE id = ${id}`
+  db.query(sql, (err, results, fields) => {
+    if (err) throw err
+    res.send(results)
+  })
 })
 
 app.use(cors())
