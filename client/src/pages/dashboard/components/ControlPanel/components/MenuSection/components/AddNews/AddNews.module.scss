@@ -1,0 +1,39 @@
+.wrap {
+  width: 100%;
+  padding: 20px;
+}
+
+.textMargin {
+  margin-bottom: 1rem;
+}
+
+.imgs {
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.wrapImages {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.wrapImg {
+  margin: 20px;
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  color: #4673b5;
+  cursor: pointer;
+}
+
+.input {
+  display: none;
+}
