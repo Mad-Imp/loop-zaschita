@@ -1,4 +1,5 @@
 import styles from './Menu.module.scss'
+import {NavLink} from 'react-router-dom'
 
 function Menu() {
 
@@ -9,19 +10,19 @@ function Menu() {
           <p>Записи</p>
         </div>
         <div className={styles.items}>
-          <p>Все записи</p>
+          <NavLink to={'/dashboard/news'} activeStyle={{borderBottom: '2px solid #4673B5FF'}}>Все записи</NavLink>
         </div>
         <div className={styles.items}>
-          <p>Добавить запись</p>
+          <NavLink to={'/dashboard/add-news'} activeStyle={{borderBottom: '2px solid #4673B5FF'}}>Добавить запись</NavLink>
         </div>
         <div className={styles.header}>
           <p>Медиафайлы</p>
         </div>
         <div className={styles.items}>
-          <p>Библиотека</p>
+          <NavLink to={'/dashboard/media'} activeStyle={{borderBottom: '2px solid #4673B5FF'}}>Библиотека</NavLink>
         </div>
         <div className={styles.items}>
-          <p>Добавить новый</p>
+          <NavLink to={'/dashboard/add-media'} activeStyle={{borderBottom: '2px solid #4673B5FF'}}>Добавить новый</NavLink>
         </div>
       </div>
     </div>
