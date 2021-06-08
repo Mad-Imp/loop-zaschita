@@ -1,0 +1,19 @@
+.title {
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 1230px) {
+  .wrap {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .title {
+    margin-left: 1rem;
+    margin-bottom: 2rem;
+  }
+}
+
