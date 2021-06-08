@@ -29,26 +29,24 @@ function checkFileType(file, cb) {
   }
 }
 
-
-
 dotenv.config({path: './.env'})
 
 const PORT = process.env.PORT || 5000
 
-const db = mysql.createConnection({
+const db = mysql.createPool({
   host: process.env.DATABASE_HOST,
   user: process.env.DATABASE_USER,
   database: process.env.DATABASE,
   password: process.env.DATABASE_PASSWORD
 })
 
-db.connect((error) => {
-  if (error) {
-    console.log(error)
-  } else (
-    console.log('My SQL connected')
-  )
-})
+// db.connect((error) => {
+//   if (error) {
+//     console.log(error)
+//   } else (
+//     console.log('My SQL connected')
+//   )
+// })
 
 app.use('/api', require('./routes/auth'))
 
@@ -76,6 +74,35 @@ app.post('/upload', function (req, res, next) {
     }
   })
 })
+
+app.post('/api/publish', function (req, res, next) {
+  let post = req.body
+  console.log(post)
+
+  let date = "" + new Date().toLocaleDateString()
+
+  if (post.images.length === 0) {
+    post.images = 0
+  }
+
+  let sql = "INSERT INTO news (date, title, description, images) VALUES ?"
+  let values = [
+    [date, post.header, post.article, post.images],
+  ];
+  db.query(sql, [values], function(err) {
+    if (err) throw err;
+    res.send({
+      status: 200,
+      msg: "Новость успешно сохранена"
+    })
+  });
+
+  // res.send({
+  //   status: 200,
+  //   msg: 'Новость сохранена'
+  // })
+})
+
 app.use(cors())
 
 app.listen(PORT, () => {
