@@ -1,0 +1,149 @@
+@import "../../../../scss/variables";
+
+.title {
+  margin-left: 0;
+  margin-bottom: 1rem;
+  padding-left: 8px;
+  font-size: 1.7rem;
+  font-weight: 400;
+  border-left: 2px solid $primaryColor;
+
+}
+
+.block {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4rem;
+
+  .item {
+    max-width: 46%;
+
+    .slogan {
+      font-size: 2rem;
+      line-height: 1.5;
+      font-weight: 500;
+      border-left: 2px solid $primaryColor;
+      padding-left: 8px;
+    }
+  }
+
+  p {
+    margin-bottom: 2rem;
+    line-height: 1.4rem;
+  }
+
+  .photo_section {
+    display: flex;
+    align-items: center;
+    max-width: 46%;
+
+    .name {
+      margin-left: 2rem;
+
+      p {
+        font-size: 1.39rem;
+        line-height: 1.4rem;
+        font-weight: 500;
+      }
+
+      .subtitle {
+        font-size: 1.1rem;
+        font-weight: 400;
+        color: #707070;
+      }
+    }
+
+    .photo {
+      max-width: 163px;
+      max-height: 206px;
+    }
+  }
+}
+
+@media (max-width: 1062px) {
+  .block {
+    .item {
+      .slogan {
+        font-size: 1.55rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .title {
+   margin-left: 1rem;
+  }
+  .block {
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    .item {
+      max-width: 100%;
+    }
+    .photo_section {
+      flex-direction: column;
+      align-items: flex-start;
+      margin: 2rem 2rem 2rem 0;
+      max-width: 60%;
+
+      .photo {
+        margin-bottom: 2rem;
+      }
+      .name {
+        margin-left: 0;
+
+        p {
+          font-size: 1.45rem;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 834px) {
+  .block {
+    .photo_section {
+      flex-direction: row;
+      align-items: center;
+      max-width: 100%;
+
+      .photo {
+        margin-right: 3rem;
+      }
+    }
+    .photo_section:nth-child(1) {
+      margin-bottom: 0;
+
+    }
+  }
+}
+
+@media (max-width: 430px) {
+  .block {
+    .item {
+      .slogan {
+        font-size: 1.35rem;
+      }
+    }
+    .photo_section {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .name {
+        p {
+          font-size: 1.1rem;
+          margin-bottom: 1rem;
+        }
+
+        .subtitle {
+          font-size: 0.98rem;
+        }
+      }
+    }
+  }
+}
+
+

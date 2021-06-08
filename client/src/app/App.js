@@ -11,6 +11,7 @@ import {Dashboard} from '../pages/dashboard/Dashboard';
 import {useAuth} from '../hooks/auth.hook';
 
 
+
 function App() {
   const {token, login, logout, id, role} = useAuth()
   const isAuthenticated = !!token
