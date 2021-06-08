@@ -1,6 +1,9 @@
 function News() {
+
+
+
   return (
-    <h1>DashboardNews</h1>
+<h1>lskdjflgi</h1>
   )
 }
 

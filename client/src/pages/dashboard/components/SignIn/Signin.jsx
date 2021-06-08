@@ -57,7 +57,7 @@ function SignIn(props) {
   }
 
   return (
-    <div className={styles.content}>
+    <div className={styles.content} >
       <h2>Данные для входа в панель управления</h2>
       <form className={classes.root} noValidate autoComplete="off">
         <div className={styles.wrap}>
