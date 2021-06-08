@@ -14,8 +14,8 @@ export default function ServicesList() {
 
     return <div className={styles.content}>
         <h2 className={styles.title}>Наши услуги</h2>
-        {services.map(item => {
-            return <p className={styles.paragraph}>{item}</p>
+        {services.map((item, index) => {
+            return <p className={styles.paragraph} key={index}>{item}</p>
         })}
     </div>
 }

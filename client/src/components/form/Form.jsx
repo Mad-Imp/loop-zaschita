@@ -18,7 +18,9 @@ const useStyles = makeStyles((theme) => ({
     },
     button: {
         width: '100%',
-        marginLeft: 8
+        marginLeft: 8,
+        backgroundColor: '#4673b5',
+        color: '#ffffff'
     },
     input: {
         boxSizing: 'border-box'
@@ -100,7 +102,7 @@ export default function Form() {
                 </div>
                 <Button className={classes.button}
                         variant="contained"
-                        color="primary"
+
                         type="submit"
                 >
                     Отправить

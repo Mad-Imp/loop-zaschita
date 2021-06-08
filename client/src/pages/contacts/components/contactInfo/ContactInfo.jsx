@@ -13,8 +13,12 @@ export default function Contacts() {
                 <p>Телефон для связи: <a href="tel:+74742476245">+7(4742) 47-62-45</a></p>
             </div>
             <div className={styles.content}>
+                <CallIcon className={styles.icon}/>
+                <p>Телефон ведущего юриста: <br/><a href="tel:+79046887489">+7(904) 688-74-89</a></p>
+            </div>
+            <div className={styles.content}>
                 <MailOutlineIcon className={styles.icon}/>
-                <p>E-mail: <a href="mailto:zaschita48lip@yandex.ru">zaschita48lip@yandex.ru</a></p>
+                <p>E-mail: <a href="mailto:hrloph@mail.ru">hrloph@mail.ru</a></p>
             </div>
             <div className={styles.content}>
                 <LocationOnIcon className={styles.icon}/>
