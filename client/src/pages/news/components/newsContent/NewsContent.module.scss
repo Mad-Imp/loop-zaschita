@@ -1,0 +1,55 @@
+@import "../../../../scss/variables";
+
+.title {
+  font-weight: 500
+}
+
+.wrap {
+  a {
+    display: inline-block;
+    margin-bottom: 1.3rem;
+    color: $fontColor;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 1s ease-out;
+    border-bottom: 1px solid $primaryColor;
+  }
+
+  a:hover {
+    color: $primaryColor;
+    transform: scale(1.0);
+  }
+
+  .description {
+    margin-bottom: 3rem;
+    line-height: 1.5rem;
+  }
+
+  .date {
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+    color: #979797;
+  }
+}
+
+.slider {
+  display: flex;
+  justify-content: center;
+  margin: 3rem auto;
+
+}
+
+.edit {
+  display: flex;
+  align-items: center;
+}
+
+.el {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon {
+  margin-left: 0.7rem;
+  cursor: pointer;
+}

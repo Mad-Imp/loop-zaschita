@@ -1,0 +1,39 @@
+@import "../../../../scss/variables";
+
+.root {
+  margin: 1rem auto;
+  padding: 0 1.5rem;
+  max-width: 70%;
+
+  .title {
+    margin-bottom: 1rem;
+    font-weight: 500
+  }
+
+  .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.7rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: $fontColor;
+    transition: all 0.5s ease-out;
+  }
+
+  a:hover {
+    color: $primaryColor;
+  }
+
+  p {
+    color: $fontColor;
+    font-size: 1rem;
+  }
+}
+
+
+
+
+

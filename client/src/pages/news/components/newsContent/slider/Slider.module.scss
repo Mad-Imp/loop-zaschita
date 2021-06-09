@@ -1,0 +1,34 @@
+@import "../../../../../scss/variables";
+
+.slides {
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+
+  .slide {
+    width: 40rem;
+    height: 25rem;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .prevBtn,
+  .nextBtn {
+    cursor: pointer;
+    transition: all 1.5s ease-out;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.prevBtn:hover,
+.nextBtn:hover {
+  color: $primaryColor;
+  transform: scale(1.1);
+}
