@@ -1,0 +1,28 @@
+@import "../../scss/variables";
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 25rem;
+  margin: 0 auto;
+
+  .err {
+    font-size: 13rem;
+    font-weight: 500;
+    color: $primaryColor;
+  }
+
+  h1 {
+    color: $primaryColor;
+  }
+
+  a {
+    color: $primaryColor;
+  }
+
+  .description {
+    line-height: 1.5rem;
+    margin-top: 2rem;
+  }
+}
