@@ -1,20 +1,18 @@
 import styles from './OrganizationActivity.module.scss';
-import rodionov from '../../../../assets/img/rodionov.jpg';
-import betenekov from '../../../../assets/img/betenekov.jpg';
 
 export default function OrganizationActivity() {
     return <div>
         <h2 className={styles.title}>Деятельность</h2>
         <div className={styles.block}>
             <div className={styles.photo_section}>
-                <img className={styles.photo} src={rodionov} alt="Родионов Василий Иванович"/>
+                <img className={styles.photo} src="./rodionov.jpg" alt="Родионов Василий Иванович"/>
                 <div className={styles.name}>
                     <p>Родионов Василий Иванович</p>
                     <p className={styles.subtitle}>Председатель ЛООП&nbsp;«Защита</p>
                 </div>
             </div>
             <div className={styles.photo_section}>
-                <img className={styles.photo} src={betenekov} alt="Бетенеков Владимир Николаевич"/>
+                <img className={styles.photo} src="./betenekov.jpg" alt="Бетенеков Владимир Николаевич"/>
                 <div className={styles.name}>
                     <p>Бетенеков Владимир Николаевич</p>
                     <p className={styles.subtitle}>Ведущий юрист</p>

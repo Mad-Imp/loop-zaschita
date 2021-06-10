@@ -5,3 +5,10 @@
   height: 190px;
   background: #f6f6f6;
 }
+
+@media (max-width: 895px) {
+  .card {
+    width: 250px;
+    height: 167px;
+  }
+}

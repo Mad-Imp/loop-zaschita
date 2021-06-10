@@ -10,6 +10,7 @@
     height: 25rem;
     object-fit: contain;
     object-position: center;
+    animation: appear  1s  ease-in-out;
   }
 
   .prevBtn,
@@ -31,4 +32,65 @@
 .nextBtn:hover {
   color: $primaryColor;
   transform: scale(1.1);
+}
+
+@keyframes appear {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 760px) {
+  .slides {
+    .slide {
+      max-width: 35rem;
+      max-height: 25rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+@media (max-width: 675px) {
+  .slides {
+    position: relative;
+    .slide {
+      max-width: 100%;
+      margin-bottom: 0;
+    }
+    .prevBtn {
+      position: absolute;
+      top: 11rem;
+      left: 3px;
+      color: #6d90c2;
+      font-size: 3rem;
+    }
+    .nextBtn {
+      position: absolute;
+      top: 11rem;
+      right: 3px;
+      color: #6d90c2;
+      font-size: 3rem;
+    }
+  }
+}
+
+@media (max-width: 470px) {
+  .slides {
+    .slide {
+      height: 20rem;
+    }
+    .prevBtn {
+      top: 9rem;
+      left: 3px;
+    }
+    .nextBtn {
+      top: 9rem;
+      right: 3px;
+    }
+  }
 }

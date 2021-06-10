@@ -3,11 +3,10 @@ import styles from './Hero.module.scss';
 function Hero() {
     return (
         <div className={styles.container}>
-            <div>
-                <h1 className={styles.title}>Липецкое областное
-                    объединение потребителей</h1>
+            <div className={styles.item}>
+                <h2 className={styles.title}>Липецкое областное объединение потребителей</h2>
             </div>
-            <div>
+            <div className={styles.item_name}>
                 <h1 className={styles.name}>«Защита»</h1>
             </div>
             <div className={styles.description}>

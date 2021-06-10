@@ -7,3 +7,10 @@
   height: 100vh;
   margin: 0 auto;
 }
+
+@media (max-width: 1230px) {
+  .main {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+}

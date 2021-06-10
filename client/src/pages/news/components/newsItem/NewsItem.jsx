@@ -6,7 +6,6 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-
 export default function NewsItem({news}) {
 
     return <Card className={styles.root}>
@@ -17,11 +16,12 @@ export default function NewsItem({news}) {
                 </Link>
             </Typography>
             <Typography variant="body2" component="p">
-                {news.description.length > 250 ? `${news.description.substr(0, 250)}...` : news.description}
+                {news.description.length > 200 ? `${news.description.substr(0, 200)}...` : news.description}
             </Typography>
             <div className={styles.wrap}>
                 <Typography variant="body2" component="p">{news.date}</Typography>
-                <Button size="small"><Link to={`/news/${news.id}`}>Перейти к новости</Link></Button>
+                <Button className={styles.btn} size="small"><Link to={`/news/${news.id}`}>Перейти к
+                    новости</Link></Button>
             </div>
         </CardContent>
     </Card>

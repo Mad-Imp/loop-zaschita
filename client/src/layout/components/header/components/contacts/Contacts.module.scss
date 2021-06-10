@@ -41,3 +41,37 @@
   color: #fff;
   margin-right: 5px;
 }
+
+
+@media (max-width: 1230px) {
+  .contacts {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+}
+
+@media (max-width: 445px) {
+  .logo {
+    display: none;
+  }
+  .wrap {
+    margin: 0 auto;
+
+    .icon {
+      font-size: 1.2rem;
+    }
+  }
+  .phone {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 362px) {
+  .wrap {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .phone {
+    border: none;
+  }
+}

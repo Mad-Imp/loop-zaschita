@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: center;
   max-width: 25rem;
-  margin: 0 auto;
+  margin: 0 auto 3rem;
 
   .err {
     font-size: 13rem;
@@ -24,5 +24,26 @@
   .description {
     line-height: 1.5rem;
     margin-top: 2rem;
+  }
+}
+
+@media (max-width: 920px) {
+  .wrap {
+    max-width: 22rem;
+
+    .err {
+      font-size: 10rem;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .wrap {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
   }
 }

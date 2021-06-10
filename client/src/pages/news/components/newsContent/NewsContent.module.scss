@@ -1,7 +1,8 @@
 @import "../../../../scss/variables";
 
 .title {
-  font-weight: 500
+  font-weight: 500;
+  max-width: 90%;
 }
 
 .wrap {
@@ -36,7 +37,6 @@
   display: flex;
   justify-content: center;
   margin: 3rem auto;
-
 }
 
 .edit {
@@ -47,9 +47,46 @@
 .el {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .icon {
   margin-left: 0.7rem;
   cursor: pointer;
+}
+
+@media (max-width: 1230px) {
+  .title {
+    margin-bottom: 1.5rem;
+  }
+  .edit {
+    margin-bottom: 1.5rem;
+  }
+}
+@media (max-width: 760px) {
+  .slider {
+    margin: 0 auto;
+  }
+}
+@media (max-width: 595px) {
+  .wrap {
+    a {
+      font-size: 1rem;
+    }
+    .date {
+      font-size: 0.9rem;
+    }
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+  .edit {
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 389px) {
+  .title {
+    font-size: 1.2rem;
+  }
 }
