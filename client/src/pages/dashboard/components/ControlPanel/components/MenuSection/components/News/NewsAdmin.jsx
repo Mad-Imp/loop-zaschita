@@ -75,7 +75,13 @@ function NewsAdmin() {
                 <div className={styles.deleteWrap}>
                   <div>
                     <p>Вы действительно хотите удалить новость</p>
-                    <Button variant="contained" color="secondary" onClick={() => deleteHandler(item.id)}>Удалить</Button>
+                    <Button
+                      variant="contained"
+                      color="secondary"
+                      onClick={() => deleteHandler(item.id)}
+                    >
+                      Удалить
+                    </Button>
                   </div>
                 </div>
               </div>) : null}

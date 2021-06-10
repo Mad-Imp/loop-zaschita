@@ -115,6 +115,7 @@ app.get('/api/news', (req, res) => {
 
 app.post('/api/delete', (req, res) => {
   let id = req.body.id
+  console.log(id)
   let sql = `DELETE FROM news WHERE id = ${id}`
   db.query(sql, (err, results, fields) => {
     if (err) throw err
