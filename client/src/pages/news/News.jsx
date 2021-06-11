@@ -17,7 +17,7 @@ function News() {
                 return response.json()
             })
             .then(data => {
-                setNews(data)
+                setNews(data.reverse())
             })
         console.log('UseEffect')
 
@@ -33,7 +33,7 @@ function News() {
             <div className={styles.container}>
                 <Switch>
                     <Route exact path="/news">
-                        {news.reverse().map(newsItem => (
+                        {news.map(newsItem => (
                             <NewsItem news={newsItem} key={newsItem.id}/>
                         ))}
                         <div className={styles.cards}><Cards/></div>

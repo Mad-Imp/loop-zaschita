@@ -123,6 +123,16 @@ app.post('/api/delete', (req, res) => {
   })
 })
 
+app.post('/api/refreshnews', (req, res) => {
+  let id = req.body.id
+  const sql = `UPDATE news SET title=?, description=?, images=? WHERE id=${id}`;
+  const data = [req.body.header, req.body.article, req.body.images];
+  db.query(sql, data, (err, results, fields) => {
+    if (err) throw err
+    res.send(results)
+  })
+})
+
 app.use(cors())
 
 app.listen(PORT, () => {
