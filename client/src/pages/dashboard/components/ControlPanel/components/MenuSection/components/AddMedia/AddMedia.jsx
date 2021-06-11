@@ -1,9 +1,9 @@
 function AddMedia() {
-  return (
-    <div>
-      
-    </div>
-  )
+    return (
+        <div>
+
+        </div>
+    )
 }
 
 export {AddMedia}

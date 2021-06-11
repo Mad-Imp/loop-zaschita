@@ -115,8 +115,19 @@ app.get('/api/news', (req, res) => {
 
 app.post('/api/delete', (req, res) => {
   let id = req.body.id
+  console.log(id)
   let sql = `DELETE FROM news WHERE id = ${id}`
   db.query(sql, (err, results, fields) => {
+    if (err) throw err
+    res.send(results)
+  })
+})
+
+app.post('/api/refreshnews', (req, res) => {
+  let id = req.body.id
+  const sql = `UPDATE news SET title=?, description=?, images=? WHERE id=${id}`;
+  const data = [req.body.header, req.body.article, req.body.images];
+  db.query(sql, data, (err, results, fields) => {
     if (err) throw err
     res.send(results)
   })
