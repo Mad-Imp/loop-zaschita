@@ -30,6 +30,13 @@
   border-bottom: 2px solid $primaryColor;
 }
 
+@media (max-width: 1230px) {
+  .nav {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+}
+
 
 
 

@@ -1,0 +1,92 @@
+@import "../../../../scss/variables";
+
+.title {
+  font-weight: 500;
+  max-width: 90%;
+}
+
+.wrap {
+  a {
+    display: inline-block;
+    margin-bottom: 1.3rem;
+    color: $fontColor;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 1s ease-out;
+    border-bottom: 1px solid $primaryColor;
+  }
+
+  a:hover {
+    color: $primaryColor;
+    transform: scale(1.0);
+  }
+
+  .description {
+    margin-bottom: 3rem;
+    line-height: 1.5rem;
+  }
+
+  .date {
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+    color: #979797;
+  }
+}
+
+.slider {
+  display: flex;
+  justify-content: center;
+  margin: 3rem auto;
+}
+
+.edit {
+  display: flex;
+  align-items: center;
+}
+
+.el {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.icon {
+  margin-left: 0.7rem;
+  cursor: pointer;
+}
+
+@media (max-width: 1230px) {
+  .title {
+    margin-bottom: 1.5rem;
+  }
+  .edit {
+    margin-bottom: 1.5rem;
+  }
+}
+@media (max-width: 760px) {
+  .slider {
+    margin: 0 auto;
+  }
+}
+@media (max-width: 595px) {
+  .wrap {
+    a {
+      font-size: 1rem;
+    }
+    .date {
+      font-size: 0.9rem;
+    }
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+  .edit {
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 389px) {
+  .title {
+    font-size: 1.2rem;
+  }
+}
