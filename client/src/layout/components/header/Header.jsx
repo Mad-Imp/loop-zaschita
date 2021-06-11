@@ -5,14 +5,14 @@ import Navbar from "./components/navbar/Navbar";
 
 
 function Header() {
-  return (
-      <header>
-        <Contacts/>
-        <Hero/>
-        <Navbar/>
-      </header>
+    return (
+        <header>
+            <Contacts/>
+            <Hero/>
+            <Navbar/>
+        </header>
 
-  );
+    );
 }
 
 export default Header;

@@ -11,7 +11,6 @@ export default function ServicesList() {
         'Письменные обращения в высшие органы власти РФ',
     ]
 
-
     return <div className={styles.content}>
         <h2 className={styles.title}>Наши услуги</h2>
         {services.map((item, index) => {

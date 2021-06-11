@@ -5,12 +5,12 @@ import Main from '../pages/main/Main';
 import Services from "../pages/services/Services";
 import ContactsPage from '../pages/contacts/ContactsPage';
 import {Layout} from '../layout/Layout';
-import {About} from '../pages/about/About';
-import {News} from '../pages/news/News';
+import About from '../pages/about/About';
+import {News} from "../pages/news/News";
 import {Dashboard} from '../pages/dashboard/Dashboard';
+import NotFound from "../pages/notFound/NotFound";
+import Videos from "../pages/videos/Videos";
 import {useAuth} from '../hooks/auth.hook';
-
-
 
 function App() {
   const {token, login, logout, id, role} = useAuth()
@@ -39,7 +39,8 @@ function App() {
                 <Route path="/dashboard">
                   <Dashboard/>
                 </Route>
-
+                <Route path="/videos" component={Videos}/>
+                <Route component={NotFound}/>
               </Switch>
             </main>
           </Layout>

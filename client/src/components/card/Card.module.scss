@@ -12,6 +12,13 @@
   width: 100px;
   height: 100px;
   position: absolute;
-  bottom: 0px;
-  right: 0px;
+  bottom: 0;
+  right: 0;
+}
+
+@media (max-width: 895px) {
+  .card {
+    width: 250px;
+    height: 167px;
+  }
 }
