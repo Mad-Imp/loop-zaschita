@@ -16,12 +16,17 @@
   margin: 1rem 1.3rem 1rem 0;
   padding-left: 8px;
   line-height: 1.5rem;
-  color: #525252;
 }
 
 .highlight {
   font-weight: 500;
   color: $fontColor;
+}
+
+@media (max-width: 1230px) {
+  .paragraph {
+    margin-right: 0;
+  }
 }
 
 @media (max-width: 1050px) {

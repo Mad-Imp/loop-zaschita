@@ -89,7 +89,7 @@ app.post('/api/publish', function (req, res, next) {
 
   let sql = "INSERT INTO news (date, title, description, images) VALUES ?"
   let values = [
-    [date, post.header, post.article, post.images],
+    [date, post.header, post.article.replace(/\/n/g, '///'), post.images],
   ];
   db.query(sql, [values], function (err) {
     if (err) throw err;

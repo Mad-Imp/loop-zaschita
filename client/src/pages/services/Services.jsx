@@ -1,6 +1,7 @@
 import styles from './Services.module.scss';
 import ServicesList from "./components/servicesList/ServicesList";
 import Info from "./components/info/Info";
+import ActivityList from "./components/activityList/ActivityList";
 
 export default function Services() {
     return <div>
@@ -10,5 +11,6 @@ export default function Services() {
             <Info/>
             <ServicesList/>
         </div>
+        <ActivityList/>
     </div>
 }
