@@ -3,7 +3,7 @@ import {NavLink} from "react-router-dom";
 
 function Navbar() {
     return (
-        <>
+        <div className={styles.navwrap}>
             <ul className={styles.nav}>
                 <li className={styles.item}>
                     <NavLink exact to={"/"} activeStyle={{borderBottom: '2px solid #4673B5FF'}}>Главная</NavLink>
@@ -22,7 +22,7 @@ function Navbar() {
                 </li>
 
             </ul>
-        </>
+        </div>
     )
 
 }

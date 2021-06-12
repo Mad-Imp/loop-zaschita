@@ -61,6 +61,20 @@
   transform: scale(1.0);
 }
 
+.confirmdelition {
+  position: relative;
+
+  .wrapchip {
+    position: absolute;
+    top: -4rem;
+    left: -5.5rem;
+
+    a {
+      border: none;
+    }
+  }
+}
+
 @media (max-width: 1230px) {
   .title {
     margin-bottom: 1.5rem;
