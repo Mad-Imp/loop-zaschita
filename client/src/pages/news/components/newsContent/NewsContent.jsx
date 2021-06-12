@@ -81,11 +81,15 @@ return <div>
               </div>
             </div>) : null}
           </div> : null}
+        </div>
+      {
+        item.images.length > 1
+          ? <div className={styles.slider}>
+            <Slider images={item.images}/>
+          </div>
+          : null
+      }
 
-        </div>
-        <div className={styles.slider}>
-          <Slider images={item.images}/>
-        </div>
         {item.description.split('\n').map((paragraph) => {
           return <p className={styles.description}>{paragraph}</p>
         })}
