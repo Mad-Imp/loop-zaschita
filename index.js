@@ -92,10 +92,14 @@ app.post('/api/publish', function (req, res, next) {
     [date, post.header, post.article, post.images],
   ];
   db.query(sql, [values], function (err) {
-    if (err) throw err;
+    if (err) {
+      res.send({
+        status: 500,
+      })
+      throw err
+    }
     res.send({
       status: 200,
-      msg: "Новость успешно сохранена"
     })
   });
 
