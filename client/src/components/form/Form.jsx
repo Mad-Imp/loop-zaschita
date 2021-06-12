@@ -5,6 +5,9 @@ import {yupResolver} from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import styles from './Form.module.scss';
 import {useForm} from "react-hook-form";
+import {Checkbox, FormControlLabel} from "@material-ui/core";
+import {useState} from "react";
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -19,11 +22,16 @@ const useStyles = makeStyles((theme) => ({
     button: {
         width: '100%',
         marginLeft: 8,
+        marginTop: '0.6rem',
         backgroundColor: '#4673b5',
         color: '#ffffff'
     },
     input: {
         boxSizing: 'border-box'
+    },
+    checkbox: {
+        marginLeft: 8,
+        color: '#4673b5',
     }
 
 }));
@@ -42,14 +50,15 @@ const schema = yup.object().shape({
 
 export default function Form() {
     const classes = useStyles();
+    const [checked, setChecked] = useState(false);
+    const [message, setMessage] = useState('');
     const {register, handleSubmit, formState: {errors}} = useForm({
         mode: 'onBlur',
         resolver: yupResolver(schema)
     });
 
-    const onSubmit = (data, e) => {
-        console.log(data);
 
+    const onSubmit = (data, e) => {
         fetch('/', {
             method: 'POST',
             headers: {
@@ -57,9 +66,16 @@ export default function Form() {
             },
             body: JSON.stringify(data)
         })
-           .finally( e.target.reset())
+            .then(res => {
+                if (res.status === 200) {
+                    setMessage('Спасибо за обращение! Мы ответим в ближайшее время');
+                    e.target.reset()
+                } else {
+                    setMessage('Произошла ошибка. Попробуйте еще раз');
+                }
+                setTimeout(() => setMessage(''), 5000);
+            })
     };
-
 
     return (
         <div className={styles.form}>
@@ -100,13 +116,17 @@ export default function Form() {
                                helperText={errors?.text?.message}
                     />
                 </div>
+                <FormControlLabel control={
+                    <Checkbox className={classes.checkbox} color="primary" name="agree" onClick={() => setChecked(!checked)}/>
+                } label="Согласен/на с политикой конфиденциальности"/>
                 <Button className={classes.button}
                         variant="contained"
-
                         type="submit"
+                        disabled={!checked}
                 >
                     Отправить
                 </Button>
+                {message.length === 0 ? null : <p className={styles.answer}>{message}</p>}
             </form>
         </div>
     );

@@ -12,7 +12,7 @@ function Contacts() {
                     <div className={styles.wrap}>
                         <CallIcon className={styles.icon}/>
                         <a className={styles.phone} href="tel:+74742476245">+7(4742) 47-62-45</a>
-                        <Button/>
+                        <Button content='Написать нам'/>
                     </div>
                 </div>
             </div>

@@ -5,8 +5,18 @@
   margin-bottom: 2rem;
 }
 
+.cards {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 .container {
   position: relative;
+}
+
+.pagination {
+  margin: 3rem auto;
 }
 
 @media (max-width: 1230px) {

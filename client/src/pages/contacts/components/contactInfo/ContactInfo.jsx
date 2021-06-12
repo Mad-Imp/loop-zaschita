@@ -3,6 +3,7 @@ import CallIcon from '@material-ui/icons/Call';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import ScheduleIcon from '@material-ui/icons/Schedule';
+import PhoneAndroidIcon from '@material-ui/icons/PhoneAndroid';
 
 export default function Contacts() {
     return (
@@ -13,7 +14,7 @@ export default function Contacts() {
                 <p>Телефон для связи: <a href="tel:+74742476245">+7(4742) 47-62-45</a></p>
             </div>
             <div className={styles.content}>
-                <CallIcon className={styles.icon}/>
+                <PhoneAndroidIcon className={styles.icon}/>
                 <p>Телефон ведущего юриста: <br/><a href="tel:+79046887489">+7(904) 688-74-89</a></p>
             </div>
             <div className={styles.content}>
