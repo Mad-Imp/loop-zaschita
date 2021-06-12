@@ -119,35 +119,39 @@ function AddNews(props = {}) {
     }
 
     const sendForm = () => {
-        let form = {
-            header: header,
-            article: article,
-            images: images.join(' - ')
+        if (header.length < 5) {
+            setHeader("Введите заголовок")
+        } else {
+            let form = {
+                header: header,
+                article: article,
+                images: images.join(' - ')
+            }
+            fetch("/api/publish",
+              {
+                  headers: {
+                      'Accept': 'application/json',
+                      'Content-Type': 'application/json'
+                  },
+                  method: "POST",
+                  body: JSON.stringify(form)
+              })
+              .then((res) => {
+                  if (res.status === 200) {
+                      setHeader('')
+                      setArticle('')
+                      setImages([])
+                      console.log('Новость успешно добавлена')
+                  }
+              })
+              .catch(function (res) {
+                  console.log(res.status)
+              })
         }
-        fetch("/api/publish",
-            {
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                method: "POST",
-                body: JSON.stringify(form)
-            })
-            .then((res) => {
-                if (res.status === 200) {
-                    setHeader('')
-                    setArticle('')
-                    setImages([])
-                    console.log('Новость успешно добавлена')
-                }
-            })
-            .catch(function (res) {
-                console.log(res.status)
-            })
     }
 
     useEffect(() => {
-        console.log(images)
+        console.log(article)
     })
 
 

@@ -1,0 +1,42 @@
+@import "./src/scss/variables";
+
+.footer {
+  width: 100%;
+  padding: 16px;
+  background: #F2F2F2;
+  margin-top: 3rem;
+
+
+}
+
+.wrap {
+  width: $widthContent;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+
+  .info {
+    text-align: left;
+
+    .contacts {
+      font-weight: 500;
+      border-bottom: 1px solid #a0a0a0;
+      padding-bottom: 6px;
+    }
+
+    p {
+      margin: 8px;
+    }
+  }
+
+  .logo {
+      display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      padding-bottom: 4px;
+    }
+  }
+
+}
