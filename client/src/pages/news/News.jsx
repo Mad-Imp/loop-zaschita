@@ -5,6 +5,7 @@ import {useEffect, useState} from "react";
 import NewsItem from "./components/newsItem/NewsItem";
 import NewsContent from "./components/newsContent/NewsContent";
 import Cards from '../../components/cards/Cards';
+import LinearProgress from '@material-ui/core/LinearProgress';
 
 
 function News() {
@@ -19,8 +20,6 @@ function News() {
             .then(data => {
                 setNews(data.reverse())
             })
-        console.log('UseEffect')
-
     }, [count])
 
     const incCount = () => {
@@ -30,17 +29,20 @@ function News() {
     return (
         <div className={styles.wrap}>
             <h1 className={styles.title}>Новости</h1>
-            <div className={styles.container}>
-                <Switch>
-                    <Route exact path="/news">
-                        {news.map(newsItem => (
-                            <NewsItem news={newsItem} key={newsItem.id}/>
-                        ))}
-                        <div className={styles.cards}><Cards/></div>
-                    </Route>
-                    <Route exact path="/news/:id"><NewsContent incCount={incCount} news={news}/></Route>
-                </Switch>
-            </div>
+            {news.length === 0
+                ? <LinearProgress/>
+                : <div className={styles.container}>
+                    <Switch>
+                        <Route exact path="/news">
+                            {news.map(newsItem => (
+                                <NewsItem news={newsItem} key={newsItem.id}/>
+                            ))}
+                            <div className={styles.cards}><Cards/></div>
+                        </Route>
+                        <Route exact path="/news/:id"><NewsContent incCount={incCount} news={news}/></Route>
+                    </Switch>
+                </div>
+            }
         </div>
     )
 }
