@@ -11,6 +11,7 @@ import {Dashboard} from '../pages/dashboard/Dashboard';
 import NotFound from "../pages/notFound/NotFound";
 import Videos from "../pages/videos/Videos";
 import {useAuth} from '../hooks/auth.hook';
+import ScrollButton from "../components/scrollButton/ScrollButton";
 
 function App() {
   const {token, login, logout, id, role} = useAuth()
@@ -45,6 +46,7 @@ function App() {
             </main>
           </Layout>
         </Router>
+        <ScrollButton/>
       </div>
   );
 }

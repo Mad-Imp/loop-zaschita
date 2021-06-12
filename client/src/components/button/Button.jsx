@@ -1,8 +1,8 @@
 import styles from "./Button.module.scss";
 
-function Button() {
+function Button(props) {
     return (
-        <button className={styles.btn}>Написать нам</button>
+        <button className={styles.btn}>{props.content}</button>
     )
 }
 

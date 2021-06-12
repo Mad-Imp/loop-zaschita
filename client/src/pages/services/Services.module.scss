@@ -11,9 +11,18 @@
   display: flex;
 }
 
+@media (max-width: 1230px) {
+  .wrap {
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+  }
+}
+
 @media (max-width: 1050px) {
   .wrap {
     flex-wrap: wrap;
+    margin-right: 0;
+    margin-left: 0;
   }
 
   .title,

@@ -48,9 +48,9 @@ export default function NewsContent({news, incCount}) {
   }
 
 
-  return <div>
-    {news.filter((item) => item.id === +id).map((item, index) => (
-      <div className={styles.wrap} key={index}>
+return <div>
+  {news.filter((item) => item.id === +id).map((item, index) => (
+    <div className={styles.wrap} key={index}>
                 <span onClick={() => incCount()}><Link to='/news'>
                     Вернуться к новостям
                 </Link>

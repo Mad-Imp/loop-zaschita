@@ -3,6 +3,7 @@
 .title {
   font-weight: 500;
   max-width: 90%;
+  margin-bottom: 3rem;
 }
 
 .wrap {
@@ -36,7 +37,7 @@
 .slider {
   display: flex;
   justify-content: center;
-  margin: 3rem auto;
+  margin: 0 auto 3rem;
 }
 
 .edit {
@@ -53,6 +54,11 @@
 .icon {
   margin-left: 0.7rem;
   cursor: pointer;
+}
+
+.icon:hover {
+  color: $primaryColor;
+  transform: scale(1.0);
 }
 
 .confirmdelition {
@@ -81,6 +87,11 @@
   .slider {
     margin: 0 auto;
   }
+  .wrap {
+    .description {
+      margin-top: 2rem;
+    }
+  }
 }
 @media (max-width: 595px) {
   .wrap {
@@ -102,5 +113,10 @@
 @media (max-width: 389px) {
   .title {
     font-size: 1.2rem;
+  }
+  .wrap {
+    .description {
+      margin-top: 0;
+    }
   }
 }
