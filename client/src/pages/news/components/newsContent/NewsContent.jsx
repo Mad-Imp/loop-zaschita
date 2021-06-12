@@ -86,7 +86,10 @@ export default function NewsContent({news, incCount}) {
         <div className={styles.slider}>
           <Slider images={item.images}/>
         </div>
-        <p className={styles.description}>{item.description}</p>
+        {item.description.split('\n').map((paragraph) => {
+          return <p className={styles.description}>{paragraph}</p>
+        })}
+        {/*<p className={styles.description}>{item.description.replace(/@@@/g, '<br/>')}</p>*/}
         <p className={styles.date}>{item.date}</p>
       </div>
     ))}
