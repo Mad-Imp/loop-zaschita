@@ -36,12 +36,8 @@ export default function Slider({images}) {
                                   fontSize="large"
                                   onClick={handleClickNext}/>
             </div>
-            : imagesArr.length === 0
-            ? null
             : imagesArr.map((img, index) => (
-                img === '0'
-                    ? null
-                    : index === slideIndex
+                index === slideIndex
                     ? <div className={styles.slides}>
                         <img className={`${styles.slide} ${styles.show}`} alt="Фотоотчет" src={img} key={index}/>
                     </div>

@@ -25,7 +25,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function AddNews(props = {}) {
-
     let imgs = []
     let title = ''
     let descr = ''
@@ -45,7 +44,7 @@ function AddNews(props = {}) {
     const [images, setImages] = useState(imgs)
     const [header, setHeader] = useState(title)
     const [article, setArticle] = useState(descr)
-
+    const [msg, setMsg] = useState('')
 
     const nameField = useRef(null);
 
@@ -67,6 +66,10 @@ function AddNews(props = {}) {
         setHeader(e.target.value)
     }
     // let arr
+
+    const downloadImage = () => {
+        nameField.current.click()
+    }
 
     const send = () => {
         const data = new FormData();
@@ -119,36 +122,47 @@ function AddNews(props = {}) {
     }
 
     const sendForm = () => {
-        let form = {
-            header: header,
-            article: article,
-            images: images.join(' - ')
+        if (header.length < 5) {
+            setHeader("Введите заголовок")
+        } else {
+            let form = {
+                header: header,
+                article: article,
+                images: images.join(' - ')
+            }
+            fetch("/api/publish",
+              {
+                  headers: {
+                      'Accept': 'application/json',
+                      'Content-Type': 'application/json'
+                  },
+                  method: "POST",
+                  body: JSON.stringify(form)
+              })
+              .then((res) => {
+                  if (res.status === 200) {
+                      setHeader('')
+                      setArticle('')
+                      setImages([])
+                      setMsg('Новость успешно добавлена')
+                      setTimeout(() => {
+                          setMsg('')
+                      }, 5000)
+                  }
+              })
+              .catch(function (res) {
+                  console.log(res.status)
+              })
         }
-        fetch("/api/publish",
-            {
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                method: "POST",
-                body: JSON.stringify(form)
-            })
-            .then((res) => {
-                if (res.status === 200) {
-                    setHeader('')
-                    setArticle('')
-                    setImages([])
-                    console.log('Новость успешно добавлена')
-                }
-            })
-            .catch(function (res) {
-                console.log(res.status)
-            })
     }
 
     useEffect(() => {
-        console.log(images)
-    })
+        if (file) {
+            send()
+            setFile('')
+        }
+        console.log(nameField)
+    }, [file])
 
 
 
@@ -185,13 +199,14 @@ function AddNews(props = {}) {
             <form action='#'>
                 <input ref={nameField} className={styles.input} onChange={imageHandler} name='myImage' type="file"/>
             </form>
-            <Button className={classes.btn} variant="contained" onClick={() => nameField.current.click()}>Выбрать
+            <Button className={classes.btn} variant="contained" onClick={downloadImage}>Выбрать
                 фото</Button>
-            <Button className={classes.btn} variant="contained" onClick={send}>Прикрепить фото</Button>
+            {/*<Button className={classes.btn} variant="contained" onClick={send}>Прикрепить фото</Button>*/}
             {Object.keys(props).length === 0 ?
               <Button onClick={sendForm} variant="contained" color="primary">Сохранить</Button> :
               <Button onClick={refreshNews} variant="contained" color="primary">Изменить</Button>
             }
+            {msg.length === 0 ? null : <p className={styles.answer}>{msg}</p>}
                         <div className={styles.wrapImages}>
                 {images.map((img, index) => {
                     return <div className={styles.wrapImg}>

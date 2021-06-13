@@ -18,6 +18,18 @@
   .item {
     max-width: 46%;
 
+    h3 {
+      font-weight: 500;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      //border-bottom: 2px solid $primaryColor;
+    }
+
+    .clause {
+      border-left: 2px solid $primaryColor;
+      padding-left: 8px;
+    }
+
     .slogan {
       font-size: 2rem;
       line-height: 1.5;

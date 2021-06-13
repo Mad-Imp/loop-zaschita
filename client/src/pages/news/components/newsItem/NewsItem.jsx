@@ -16,7 +16,9 @@ export default function NewsItem({news}) {
                 </Link>
             </Typography>
             <Typography variant="body2" component="p">
-                {news.description.length > 200 ? `${news.description.substr(0, 200)}...` : news.description}
+                {news.description.length > 200 ?
+                  `${news.description.substr(0, 200)}...` :
+                  news.description}
             </Typography>
             <div className={styles.wrap}>
                 <Typography variant="body2" component="p">{news.date}</Typography>

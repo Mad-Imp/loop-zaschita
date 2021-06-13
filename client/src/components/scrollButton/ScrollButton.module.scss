@@ -1,0 +1,27 @@
+@import "../../scss/variables";
+
+.button {
+  background-color: $primaryColor;
+  opacity: 0.8;
+  border: none;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  padding: 0.6rem;
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: 1.5s;
+}
+
+.button:hover,
+.button:active {
+  opacity: 1;
+  transition: 1.5s;
+}
+
+.upIcon {
+  color: #ffffff;
+}
