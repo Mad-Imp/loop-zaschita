@@ -6,7 +6,8 @@ function Card(props) {
 
   return (
     <div style={{background: props.color}} className={styles.card}>
-      <div><p>{props.title}</p></div>
+      <div><p className={styles.title}>{props.title}</p></div>
+      <div><p>{props.description}</p></div>
       <div className={styles.arrow}>
         <ArrowForwardIcon/>
       </div>
