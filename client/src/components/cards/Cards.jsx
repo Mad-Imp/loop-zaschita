@@ -10,15 +10,15 @@ function Cards() {
     {
       id: 1,
       title: 'Социальный проект: "Доступная юридическая помощь, как фактор повышения качества жизни людей"',
-      color: "#f6f6f6",
-      image: "../assets/img/card-mm.png",
+      color: "#f2f2ff",
+      image: "./card-mm.ppg",
       link: ''
     },
     {
       id: 2,
-      title: "О нас в СМИ",
+      title: "Наши партнеры",
       color: "#ffe9da",
-      image: "../assets/img/card-mm.png",
+      image: "./card-mm.ppg",
       link: ''
     },
     {
