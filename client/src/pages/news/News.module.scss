@@ -1,5 +1,7 @@
 @import "../../scss/variables";
-
+.wrap {
+  min-height: 15vh;
+}
 .title {
   font-weight: 500;
   margin-bottom: 2rem;
@@ -29,5 +31,11 @@
 @media (max-width: 800px) {
   .cards {
     display: none;
+  }
+}
+
+@media (max-width: 895px) {
+  .cards {
+    margin-right: 1.2rem;
   }
 }

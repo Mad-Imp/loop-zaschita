@@ -10,29 +10,30 @@ import {useState} from 'react'
 
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    '& .MuiTextField-root': {
-      margin: theme.spacing(1),
-      display: 'flex',
-      flexDirection: 'column',
-      width: '100%'
+    root: {
+        '& .MuiTextField-root': {
+            margin: theme.spacing(1),
+            display: 'flex',
+            flexDirection: 'column',
+            width: '100%'
+        },
+        marginTop: '2rem '
     },
-    marginTop: '2rem '
-  },
-  button: {
-    width: '100%',
-    marginLeft: 8,
-    marginTop: '0.6rem',
-    backgroundColor: '#4673b5',
-    color: '#ffffff'
-  },
-  input: {
-    boxSizing: 'border-box'
-  },
-  checkbox: {
-    marginLeft: 8,
-    color: '#4673b5',
-  }
+    button: {
+        width: '100%',
+        marginLeft: 8,
+        marginTop: '0.6rem',
+        backgroundColor: '#4673b5',
+        color: '#ffffff'
+    },
+    input: {
+        boxSizing: 'border-box'
+    },
+    checkbox: {
+        marginLeft: 8,
+        color: '#4673b5',
+    }
+
 }))
 
 const schema = yup.object().shape({
@@ -47,18 +48,17 @@ const schema = yup.object().shape({
     .required('Введите ваш вопрос'),
 })
 
+export default function Form({setOpen}) {
+    const classes = useStyles()
+    const [checked, setChecked] = useState(false)
+    const [message, setMessage] = useState('')
+    const {register, handleSubmit, formState: {errors}} = useForm({
+        mode: 'onBlur',
+        resolver: yupResolver(schema)
+    })
 
-export default function Form() {
-  const classes = useStyles()
-  const [checked, setChecked] = useState(false)
-  const [message, setMessage] = useState('')
-  const {register, handleSubmit, formState: {errors}} = useForm({
-    mode: 'onBlur',
-    resolver: yupResolver(schema)
-  })
 
   const onSubmit = (data, e) => {
-    console.log(data)
     fetch('/postemail', {
       method: 'POST',
       headers: {
@@ -69,8 +69,8 @@ export default function Form() {
       .then(res => {
         if (res.status === 200) {
           setMessage('Спасибо за обращение! Мы ответим в ближайшее время')
-          console.log(res)
           e.target.reset()
+            setTimeout(() => setOpen(false), 3000)
         } else {
           setMessage('Произошла ошибка. Попробуйте еще раз')
         }

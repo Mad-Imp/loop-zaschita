@@ -1,0 +1,36 @@
+@import "../../scss/variables";
+
+.title {
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.subtitle {
+  margin-left: 0;
+  padding-left: 8px;
+  border-left: 2px solid $primaryColor;
+  font-size: 1.5rem;
+}
+
+.list {
+  margin: 1.5rem 0;
+
+  li {
+    margin: 1.5rem 0 1.5rem 2rem;
+    line-height: 1.5rem;
+  }
+}
+
+.item {
+  p {
+    margin: 1.5rem 0;
+    line-height: 1.5rem;
+  }
+}
+
+@media (max-width: 1230px) {
+  .wrap {
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+  }
+}
