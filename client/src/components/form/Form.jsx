@@ -1,12 +1,12 @@
-import TextField from '@material-ui/core/TextField';
-import {makeStyles} from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import {yupResolver} from '@hookform/resolvers/yup';
-import * as yup from "yup";
-import styles from './Form.module.scss';
-import {useForm} from "react-hook-form";
-import {Checkbox, FormControlLabel} from "@material-ui/core";
-import {useState} from "react";
+import TextField from '@material-ui/core/TextField'
+import {makeStyles} from '@material-ui/core/styles'
+import Button from '@material-ui/core/Button'
+import {yupResolver} from '@hookform/resolvers/yup'
+import * as yup from 'yup'
+import styles from './Form.module.scss'
+import {useForm} from 'react-hook-form'
+import {Checkbox, FormControlLabel} from '@material-ui/core'
+import {useState} from 'react'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
         color: '#4673b5',
     }
 
-}));
+}))
 
 const schema = yup.object().shape({
     name: yup.string()
@@ -47,14 +47,14 @@ const schema = yup.object().shape({
         .required('Введите ваш вопрос'),
 })
 
-export default function Form() {
-    const classes = useStyles();
-    const [checked, setChecked] = useState(false);
-    const [message, setMessage] = useState('');
+export default function Form({setOpen}) {
+    const classes = useStyles()
+    const [checked, setChecked] = useState(false)
+    const [message, setMessage] = useState('')
     const {register, handleSubmit, formState: {errors}} = useForm({
         mode: 'onBlur',
         resolver: yupResolver(schema)
-    });
+    })
 
 
     const onSubmit = (data, e) => {
@@ -67,14 +67,15 @@ export default function Form() {
         })
             .then(res => {
                 if (res.status === 200) {
-                    setMessage('Спасибо за обращение! Мы ответим в ближайшее время');
+                    setMessage('Спасибо за обращение! Мы ответим в ближайшее время')
                     e.target.reset()
+                    setTimeout(() => setOpen(false), 3000)
                 } else {
-                    setMessage('Произошла ошибка. Попробуйте еще раз');
+                    setMessage('Произошла ошибка. Попробуйте еще раз')
                 }
-                setTimeout(() => setMessage(''), 5000);
+                setTimeout(() => setMessage(''), 5000)
             })
-    };
+    }
 
     return (
         <div className={styles.form}>
@@ -116,7 +117,8 @@ export default function Form() {
                     />
                 </div>
                 <FormControlLabel control={
-                    <Checkbox className={classes.checkbox} color="primary" name="agree" onClick={() => setChecked(!checked)}/>
+                    <Checkbox className={classes.checkbox} color="primary" name="agree"
+                              onClick={() => setChecked(!checked)}/>
                 } label="Согласен/на с политикой конфиденциальности"/>
                 <Button className={classes.button}
                         variant="contained"
@@ -128,5 +130,5 @@ export default function Form() {
                 {message.length === 0 ? null : <p className={styles.answer}>{message}</p>}
             </form>
         </div>
-    );
+    )
 }
