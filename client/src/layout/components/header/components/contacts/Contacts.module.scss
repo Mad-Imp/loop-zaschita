@@ -18,13 +18,14 @@
   display: block;
   width: 40px;
   height: 40px;
-  z-index: 1000;
+  z-index: 10;
 }
 
 .wrap {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  min-height: 2.5rem;
 }
 
 .phone {
@@ -50,10 +51,19 @@
   }
 }
 
-@media (max-width: 445px) {
+@media (max-width: 532px) {
+  .wrap {
+    margin-right: 2.5rem;
+  }
+}
+
+@media (max-width: 488px) {
   .logo {
     display: none;
   }
+}
+
+@media (max-width: 445px) {
   .wrap {
     margin: 0 auto;
 
@@ -66,10 +76,17 @@
   }
 }
 
-@media (max-width: 362px) {
+@media (max-width: 404px) {
+  .wrap {
+    margin-right: 1rem;
+  }
+}
+
+@media (max-width: 378px) {
   .wrap {
     flex-wrap: wrap;
     justify-content: center;
+
   }
   .phone {
     border: none;

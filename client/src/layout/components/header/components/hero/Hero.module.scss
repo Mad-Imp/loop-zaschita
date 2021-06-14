@@ -56,8 +56,6 @@
   }
 }
 
-
-
 @media (max-width: 560px) {
   .item,
   .item_name,
@@ -72,5 +70,13 @@
   }
   .name {
     font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 532px) {
+  .container {
+    border-bottom: 1px solid rgba(139, 138, 138, 0.27);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
   }
 }
