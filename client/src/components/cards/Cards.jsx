@@ -16,7 +16,7 @@ function Cards() {
     },
     {
       id: 2,
-      title: "О нас в СМИ",
+      title: "Наши партнеры",
       color: "#ffe9da",
       image: "../assets/img/card-mm.png",
       link: ''
