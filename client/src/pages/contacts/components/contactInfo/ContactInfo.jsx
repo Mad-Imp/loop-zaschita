@@ -11,11 +11,11 @@ export default function Contacts() {
             <h1 className={styles.title}>Контактная информация</h1>
             <div className={styles.content}>
                 <CallIcon className={styles.icon}/>
-                <p>Телефон для связи: <a href="tel:+74742476245">+7(4742) 47-62-45</a></p>
+                <p>Телефон для связи: <a href="tel:+74742476245">+7(4742)&nbsp;47&nbsp;-&nbsp;62&nbsp;-&nbsp;45</a></p>
             </div>
             <div className={styles.content}>
                 <PhoneAndroidIcon className={styles.icon}/>
-                <p>Телефон ведущего юриста: <br/><a href="tel:+79046887489">+7(904) 688-74-89</a></p>
+                <p>Телефон ведущего юриста: <br/><a href="tel:+79046887489">+7(904) 688 - 74 - 89</a></p>
             </div>
             <div className={styles.content}>
                 <MailOutlineIcon className={styles.icon}/>

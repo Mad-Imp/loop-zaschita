@@ -25,11 +25,12 @@ function News() {
     const pageLimit = 10,
         lastNewsIndex = currentPage * pageLimit,
         firstNewsIndex = lastNewsIndex - pageLimit,
-        currentNews = news.slice(firstNewsIndex, lastNewsIndex),
-        quantityPages = Math.ceil(news.length / pageLimit);
+        currentNews = news.slice(firstNewsIndex, lastNewsIndex);
 
     const calculatePageNumbers = () => {
-        const pageNumbers = [];
+        const pageNumbers = [],
+        quantityPages = Math.ceil(news.length / pageLimit);
+
         for (let i = 1; i <= quantityPages; i++) {
             pageNumbers.push(i);
         }

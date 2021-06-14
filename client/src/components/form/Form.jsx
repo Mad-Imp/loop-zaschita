@@ -8,7 +8,6 @@ import {useForm} from "react-hook-form";
 import {Checkbox, FormControlLabel} from "@material-ui/core";
 import {useState} from "react";
 
-
 const useStyles = makeStyles((theme) => ({
     root: {
         '& .MuiTextField-root': {
