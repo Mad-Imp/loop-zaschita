@@ -38,8 +38,8 @@ function Cards() {
       <div className={styles.wrap}>
         {
           cardsInfo.map((item) => (
-            <Link to={item.link}>
-              <Card key={item.id} title={item.title} color={item.color} description={item.description} image={item.image}/>
+            <Link key={item.id + 'b'} to={item.link}>
+              <Card title={item.title} color={item.color} description={item.description} image={item.image}/>
             </Link>
 
           ))
