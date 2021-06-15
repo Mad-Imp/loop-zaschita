@@ -4,6 +4,7 @@ const mysql = require('mysql')
 const multer = require('multer')
 const path = require('path')
 const cors = require('cors')
+const mailer = require('./nodemailer')
 
 const app = express()
 app.use(express.json({extended: true}))
@@ -133,8 +134,25 @@ app.post('/api/refreshnews', (req, res) => {
   const data = [req.body.header, req.body.article, req.body.images];
   db.query(sql, data, (err, results, fields) => {
     if (err) throw err
-    res.send(results)
+    res.send({
+      status: 200
+    })
   })
+})
+
+app.post('/postemail', (req, res) => {
+  const message = {
+    from: "<zaschita@zaschita48lip.ru>",
+    to: 'mortido3@mail.ru',
+    subject: "Обращение с сайта",
+    html: ` 
+    <h1>Данное обращение пришло с сайта: zaschita48lip.ru</h1>
+    <h2>Имя отправителя: ${req.body.name}</h2>
+    <h2>Почта отправителя: ${req.body.email}</h2>
+    <h2>Текс сообщения: ${req.body.text}</h2>
+    `
+  }
+  mailer(message, res)
 })
 
 app.use(cors())

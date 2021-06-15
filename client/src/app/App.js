@@ -22,7 +22,7 @@ function App() {
   return (
       <div className={styles.content}>
         <Router>
-          <ScrollToTop/>
+          {/*<ScrollToTop/>*/}
           <Layout>
             <main className={styles.content_route}>
               <Switch>

@@ -25,10 +25,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function AddNews(props = {}) {
+
+
+
+
+
     let imgs = []
     let title = ''
     let descr = ''
-
     if (Object.keys(props).length > 0) {
         if (props.images.length === 1 && props.images !== '0') {
             imgs.push(props.images[0])
@@ -38,15 +42,16 @@ function AddNews(props = {}) {
         title = props.title
         descr = props.description
     }
-
     const classes = useStyles();
     const [file, setFile] = useState('')
     const [images, setImages] = useState(imgs)
     const [header, setHeader] = useState(title)
     const [article, setArticle] = useState(descr)
     const [msg, setMsg] = useState('')
+    const [counter, setCounter] = useState(0)
 
     const nameField = useRef(null);
+
 
     const imageHandler = (e) => {
         setFile(() => e.target.files[0])
@@ -88,9 +93,6 @@ function AddNews(props = {}) {
     }
 
     const refreshNews = () => {
-        let img;
-        if (images.length === 0) {
-        }
         let form = {
             id: props.id,
             header: header,
@@ -110,12 +112,11 @@ function AddNews(props = {}) {
               if (res.status === 200) {
                   setHeader('')
                   setArticle('')
-                  setImages([])
+                  setImages( [])
+                  setCounter((prevState) => prevState + 1 )
                   console.log('Новость успешно изменена')
               }
           })
-          .then(props.show())
-          .then(props.count())
           .catch(function (res) {
               console.log(res.status)
           })
@@ -141,9 +142,9 @@ function AddNews(props = {}) {
               })
               .then((res) => {
                   if (res.status === 200) {
-                      setHeader('')
-                      setArticle('')
-                      setImages([])
+                      setHeader((prevState) => '')
+                      setArticle((prevState) => '')
+                      setImages(prevState => [])
                       setMsg('Новость успешно добавлена')
                       setTimeout(() => {
                           setMsg('')
@@ -161,18 +162,19 @@ function AddNews(props = {}) {
             send()
             setFile('')
         }
-        console.log(nameField)
+        return () => {
+        }
     }, [file])
 
-
+    useEffect(() => {
+        if (header === '' && article === '' && images.length === 0 && counter !== 0) {
+            props.count()
+            props.show()
+        }
+    }, [counter])
 
     return (
         <div className={styles.wrap}>
-            {/*<div>*/}
-            {/*    {arr.map(item => {*/}
-            {/*        return <p className={styles.textMargin}>{item}</p>*/}
-            {/*    })}*/}
-            {/*</div>*/}
             <TextField
                 className={classes.header}
                 id="outlined-textarea"
@@ -209,7 +211,7 @@ function AddNews(props = {}) {
             {msg.length === 0 ? null : <p className={styles.answer}>{msg}</p>}
                         <div className={styles.wrapImages}>
                 {images.map((img, index) => {
-                    return <div className={styles.wrapImg}>
+                    return <div key={index + 'c'} className={styles.wrapImg}>
                         <HighlightOffIcon onClick={() => closeHandler(index)} className={styles.icon}/>
                         <img className={styles.imgs} src={img} key={index} alt='image'/>
                     </div>
