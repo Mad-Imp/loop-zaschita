@@ -134,7 +134,9 @@ app.post('/api/refreshnews', (req, res) => {
   const data = [req.body.header, req.body.article, req.body.images];
   db.query(sql, data, (err, results, fields) => {
     if (err) throw err
-    res.send(results)
+    res.send({
+      status: 200
+    })
   })
 })
 

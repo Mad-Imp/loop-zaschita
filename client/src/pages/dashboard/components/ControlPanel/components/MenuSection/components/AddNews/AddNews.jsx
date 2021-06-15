@@ -48,7 +48,7 @@ function AddNews(props = {}) {
     const [header, setHeader] = useState(title)
     const [article, setArticle] = useState(descr)
     const [msg, setMsg] = useState('')
-    const counter = 0
+    const [counter, setCounter] = useState(0)
 
     const nameField = useRef(null);
 
@@ -110,14 +110,13 @@ function AddNews(props = {}) {
           })
           .then((res) => {
               if (res.status === 200) {
-                  setHeader((prevState) => '')
-                  setArticle((prevState) => '')
-                  setImages((prevState) => [])
+                  setHeader('')
+                  setArticle('')
+                  setImages( [])
+                  setCounter((prevState) => prevState + 1 )
                   console.log('Новость успешно изменена')
               }
           })
-          .then(props.show())
-          .then(props.count())
           .catch(function (res) {
               console.log(res.status)
           })
@@ -167,7 +166,12 @@ function AddNews(props = {}) {
         }
     }, [file])
 
-
+    useEffect(() => {
+        if (header === '' && article === '' && images.length === 0 && counter !== 0) {
+            props.count()
+            props.show()
+        }
+    }, [counter])
 
     return (
         <div className={styles.wrap}>
