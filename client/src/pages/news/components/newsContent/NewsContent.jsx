@@ -49,17 +49,18 @@ export default function NewsContent({news, incCount}) {
 
 return <div>
   {news.filter((item) => item.id === +id).map((item, index) => (
-    <div className={styles.wrap} key={index}>
-                <span onClick={() => incCount()}><Link to='/news'>
+    <div className={styles.wrap} key={index + 'ynkjnkj'}>
+      {showEditWindow ?
+        (<div className={styles.editNews}>
+          <AddNews count={incCount} show={setShowEditWindow} id={item.id} title={item.title}
+                   description={item.description} images={item.images}/>
+        </div>) :
+        (<div>
+                <span onClick={incCount}><Link to='/news'>
                     Вернуться к новостям
                 </Link>
                 </span>
-        {showEditWindow ?
-          (<div className={styles.editNews}>
-            <AddNews count={incCount} show={setShowEditWindow} id={item.id} title={item.title}
-                     description={item.description} images={item.images}/>
-          </div>) :
-          null}
+
         <div className={styles.el}>
           <h1 className={styles.title}>{item.title}</h1>
           {isAuthenticated ? <div className={styles.edit}>
@@ -89,12 +90,12 @@ return <div>
           : null
       }
 
-        {item.description.split('\n').map((paragraph) => {
-          return <p className={styles.description}>{paragraph}</p>
+        {item.description.split('\n').map((paragraph,index) => {
+          return <p key={index + 1000} className={styles.description}>{paragraph}</p>
         })}
-        {/*<p className={styles.description}>{item.description.replace(/@@@/g, '<br/>')}</p>*/}
         <p className={styles.date}>{item.date}</p>
-      </div>
+      </div>)}
+    </div>
     ))}
   </div>
 }

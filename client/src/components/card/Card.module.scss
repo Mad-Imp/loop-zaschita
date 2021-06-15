@@ -6,6 +6,17 @@
   height: 190px;
   padding-left: 20px;
   padding-top: 20px;
+
+  .arrow {
+    position: absolute;
+    left: 30px;
+    bottom: 20px;
+  }
+
+  .title {
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
 }
 
 .imgs {

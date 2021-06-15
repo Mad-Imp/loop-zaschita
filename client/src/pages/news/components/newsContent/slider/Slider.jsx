@@ -29,8 +29,8 @@ export default function Slider({images}) {
                                     onClick={handleClickPrev}/>
                 {imagesArr.map((img, index) => (
                     index === slideIndex
-                        ? <img className={`${styles.slide} ${styles.show}`} alt="Фотоотчет" src={img} key={index}/>
-                        : <img className={`${styles.slide} ${styles.hide}`} alt="Фотоотчет" src={img} key={index}/>
+                        ? <img className={`${styles.slide} ${styles.show}`} alt="Фотоотчет" src={img} key={index + "anbsd"}/>
+                        : <img className={`${styles.slide} ${styles.hide}`} alt="Фотоотчет" src={img} key={index + 'amanbsdmnab'}/>
                 ))}
                 <NavigateNextIcon className={styles.nextBtn}
                                   fontSize="large"
@@ -38,11 +38,11 @@ export default function Slider({images}) {
             </div>
             : imagesArr.map((img, index) => (
                 index === slideIndex
-                    ? <div className={styles.slides}>
-                        <img className={`${styles.slide} ${styles.show}`} alt="Фотоотчет" src={img} key={index}/>
+                    ? <div className={styles.slides} key={index + 'bmnabsmdnbas'}>
+                        <img className={`${styles.slide} ${styles.show}`} alt="Фотоотчет" src={img} />
                     </div>
-                    : <div className={styles.slides}>
-                        <img className={`${styles.slide} ${styles.hide}`} alt="Фотоотчет" src={img} key={index}/>
+                    : <div className={styles.slides} key={index + 'kkbajsbdkajb'}>
+                        <img className={`${styles.slide} ${styles.hide}`} alt="Фотоотчет" src={img} />
                     </div>
             ))
     )

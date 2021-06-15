@@ -12,16 +12,6 @@ function News() {
     const [count, setCount] = useState(0);
     const [currentPage, setCurrentPage] = useState(1);
 
-    useEffect(() => {
-        fetch('/api/news')
-            .then(response => {
-                return response.json()
-            })
-            .then(data => {
-                setNews(data.reverse())
-            })
-    }, [count])
-
     const pageLimit = 10,
         lastNewsIndex = currentPage * pageLimit,
         firstNewsIndex = lastNewsIndex - pageLimit,
@@ -44,6 +34,17 @@ function News() {
     const incCount = () => {
         setCount(prevState => prevState + 1);
     }
+
+    useEffect(() => {
+        fetch('/api/news')
+          .then(response => {
+              return response.json()
+          })
+          .then(data => {
+              setNews(data.reverse())
+              console.log('Я ВСЕ ИЗМЕНИЛ')
+          })
+    }, [count])
 
     return (
         <div className={styles.wrap}>
