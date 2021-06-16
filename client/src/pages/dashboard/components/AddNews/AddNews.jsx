@@ -1,3 +1,4 @@
+import {v4 as uuidv4} from "uuid";
 import styles from './AddNews.module.scss'
 import {useEffect, useState, useRef} from 'react';
 import axios from 'axios';
@@ -197,29 +198,28 @@ function AddNews(props = {}) {
                 multiline
                 rows={10}
                 variant="outlined"
-              />
-              <form action='#'>
-                  <input ref={nameField} className={styles.input} onChange={imageHandler} name='myImage' type="file"/>
-              </form>
-              <Button className={classes.btn} variant="contained" onClick={downloadImage}>Выбрать
-                  фото</Button>
-              {/*<Button className={classes.btn} variant="contained" onClick={send}>Прикрепить фото</Button>*/}
-              {Object.keys(props).length === 0 ?
-                <Button onClick={sendForm} variant="contained" color="primary">Сохранить</Button> :
-                <Button onClick={refreshNews} variant="contained" color="primary">Изменить</Button>
-              }
-              {msg.length === 0 ? null : <p className={styles.answer}>{msg}</p>}
-              <div className={styles.wrapImages}>
-                  {images.map((img, index) => {
-                      return <div key={index + 'c'} className={styles.wrapImg}>
-                          <HighlightOffIcon onClick={() => closeHandler(index)} className={styles.icon}/>
-                          <img className={styles.imgs} src={img} key={index} alt='image'/>
-                      </div>
-                  })}
-              </div>
-          </div>
-    </>
-
+            />
+            <form action='#'>
+                <input ref={nameField} className={styles.input} onChange={imageHandler} name='myImage' type="file"/>
+            </form>
+            <Button className={classes.btn} variant="contained" onClick={downloadImage}>Выбрать
+                фото</Button>
+            {/*<Button className={classes.btn} variant="contained" onClick={send}>Прикрепить фото</Button>*/}
+            {Object.keys(props).length === 0 ?
+              <Button onClick={sendForm} variant="contained" color="primary">Сохранить</Button> :
+              <Button onClick={refreshNews} variant="contained" color="primary">Изменить</Button>
+            }
+            {msg.length === 0 ? null : <p className={styles.answer}>{msg}</p>}
+                        <div className={styles.wrapImages}>
+                {images.map((img, index) => {
+                    return <div key={uuidv4()} className={styles.wrapImg}>
+                        <HighlightOffIcon onClick={() => closeHandler(index)} className={styles.icon}/>
+                        <img className={styles.imgs} src={img} key={uuidv4()} alt='image'/>
+                    </div>
+                })}
+            </div>
+        </div>
+        </>
     )
 }
 

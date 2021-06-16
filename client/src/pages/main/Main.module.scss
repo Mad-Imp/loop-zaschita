@@ -9,44 +9,12 @@
     h3 {
       font-weight: 500;
       margin-bottom: 2rem;
+      font-size: 1.3rem;
     }
 
     h2 {
       font-weight: 500;
       margin-bottom: 1.5rem;
-    }
-
-    .container {
-      display: flex;
-      justify-content: space-between;
-
-      img {
-        width: 405px;
-        height: 304px;
-        object-fit: contain;
-        margin-right: 3rem;
-      }
-
-      .description {
-        margin-right: 2rem;
-
-        .subtitle {
-          font-weight: 500;
-          margin-left: 0;
-          font-size: 1.3rem;
-          margin-bottom: 2rem;
-        }
-
-        p {
-          line-height: 1.5rem;
-        }
-
-        .highlight {
-          font-weight: 500;
-          margin-top: 1rem;
-          font-size: 1.05rem;
-        }
-      }
     }
 
     .numbers {
@@ -55,7 +23,12 @@
       align-items: flex-start;
       justify-content: space-between;
       flex-wrap: wrap;
-      margin-bottom: 4rem;
+      padding-top: 3rem;
+      padding-bottom: 4rem;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+      border-top: 1px solid rgba(139, 138, 138, 0.27);
+      border-bottom: 1px solid rgba(139, 138, 138, 0.27);
 
       .count {
         max-width: 18%;
@@ -70,6 +43,55 @@
     }
   }
 }
+
+.container {
+  display: flex;
+  justify-content: space-between;
+
+  img {
+    width: 365px;
+    height: 281px;
+    object-fit: contain;
+    margin-right: 3rem;
+  }
+
+  img:nth-child(1) {
+    width: 420px;
+    height: 315px;
+  }
+
+  .description {
+    margin-right: 2rem;
+
+    .subtitle {
+      font-weight: 500;
+      margin-left: 0;
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+    }
+
+    p {
+      line-height: 1.5rem;
+    }
+
+    .highlight {
+      font-weight: 500;
+      margin-top: 1rem;
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row {
+  display: flex;
+  margin-bottom: 3rem;
+}
+
 
 .title {
   font-weight: 500;
@@ -92,6 +114,10 @@
   width: 46%;
 }
 
+.targets {
+  display: flex;
+}
+
 .activities {
   list-style-type: none;
   margin-right: 1rem;
@@ -112,5 +138,57 @@
   .main {
     margin-left: 1.5rem;
     margin-right: 1.5rem;
+  }
+
+  .container {
+    img {
+      width: 400px;
+      height: 308px;
+      margin-top: 1.5rem;
+    }
+  }
+
+  .info {
+    max-width: 60%;
+  }
+
+  .row {
+    flex-direction: column;
+    margin-bottom: 5rem;
+  }
+
+  .targets {
+    flex-direction: column-reverse;
+  }
+
+}
+
+@media (max-width: 1040px) {
+  .wrap {
+    h3 {
+      font-size: 1.2rem;
+    }
+  }
+
+  .container {
+    flex-wrap: wrap;
+  }
+
+  .item {
+    width: 48%;
+  }
+
+  .news {
+    width: 48%;
+  }
+}
+
+@media (max-width: 800px) {
+  .item {
+    width: 100%;
+  }
+
+  .news {
+    width: 100%;
   }
 }

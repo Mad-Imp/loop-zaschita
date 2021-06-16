@@ -1,3 +1,4 @@
+import {v4 as uuidv4} from "uuid";
 import styles from './VideoComponent.module.scss';
 
 export default function VideoComponent() {
@@ -26,8 +27,8 @@ export default function VideoComponent() {
     ]
 
     return (
-        videos.map((video, index) => (
-            <div key={index}>
+        videos.map(video => (
+            <div key={uuidv4()}>
                 <h3 className={styles.title}>{video.title}</h3>
                 <iframe className={styles.video} title={video.title} src={video.url} allowFullScreen/>
             </div>

@@ -1,4 +1,5 @@
 import styles from "./ActivityList.module.scss";
+import {v4 as uuidv4} from "uuid";
 
 export default function ActivityList() {
 
@@ -37,10 +38,10 @@ export default function ActivityList() {
 
     return <div className={styles.content}>
         <h2 className={styles.title}>Направления деятельности</h2>
-        {activities.map((item, index) => (
-            <div key={index}>
+        {activities.map(item => (
+            <div key={uuidv4()}>
                 <h3 className={styles.subtitle}>{item.title}</h3>
-                {item.description.map((item, index) => <p className={styles.description} key={index}>{item}</p>)}
+                {item.description.map(item => <p className={styles.description} key={uuidv4()}>{item}</p>)}
             </div>
         ))}
     </div>
