@@ -173,9 +173,9 @@ function AddNews(props = {}) {
         }
     }, [counter])
 
-    return (
-        <div className={styles.wrap}>
-            <TextField
+    return (<> <h1 style={{fontWeight: '500', marginLeft: '1.5rem'}}>Добавить новость</h1>
+          <div className={styles.wrap}>
+              <TextField
                 className={classes.header}
                 id="outlined-textarea"
                 label="Заголовок новости"
@@ -185,8 +185,8 @@ function AddNews(props = {}) {
                 onChange={headerHandler}
                 multiline
                 variant="outlined"
-            />
-            <TextField
+              />
+              <TextField
                 id="outlined-textarea"
                 className={classes.article}
                 label="Текст новости"
@@ -197,27 +197,29 @@ function AddNews(props = {}) {
                 multiline
                 rows={10}
                 variant="outlined"
-            />
-            <form action='#'>
-                <input ref={nameField} className={styles.input} onChange={imageHandler} name='myImage' type="file"/>
-            </form>
-            <Button className={classes.btn} variant="contained" onClick={downloadImage}>Выбрать
-                фото</Button>
-            {/*<Button className={classes.btn} variant="contained" onClick={send}>Прикрепить фото</Button>*/}
-            {Object.keys(props).length === 0 ?
-              <Button onClick={sendForm} variant="contained" color="primary">Сохранить</Button> :
-              <Button onClick={refreshNews} variant="contained" color="primary">Изменить</Button>
-            }
-            {msg.length === 0 ? null : <p className={styles.answer}>{msg}</p>}
-                        <div className={styles.wrapImages}>
-                {images.map((img, index) => {
-                    return <div key={index + 'c'} className={styles.wrapImg}>
-                        <HighlightOffIcon onClick={() => closeHandler(index)} className={styles.icon}/>
-                        <img className={styles.imgs} src={img} key={index} alt='image'/>
-                    </div>
-                })}
-            </div>
-        </div>
+              />
+              <form action='#'>
+                  <input ref={nameField} className={styles.input} onChange={imageHandler} name='myImage' type="file"/>
+              </form>
+              <Button className={classes.btn} variant="contained" onClick={downloadImage}>Выбрать
+                  фото</Button>
+              {/*<Button className={classes.btn} variant="contained" onClick={send}>Прикрепить фото</Button>*/}
+              {Object.keys(props).length === 0 ?
+                <Button onClick={sendForm} variant="contained" color="primary">Сохранить</Button> :
+                <Button onClick={refreshNews} variant="contained" color="primary">Изменить</Button>
+              }
+              {msg.length === 0 ? null : <p className={styles.answer}>{msg}</p>}
+              <div className={styles.wrapImages}>
+                  {images.map((img, index) => {
+                      return <div key={index + 'c'} className={styles.wrapImg}>
+                          <HighlightOffIcon onClick={() => closeHandler(index)} className={styles.icon}/>
+                          <img className={styles.imgs} src={img} key={index} alt='image'/>
+                      </div>
+                  })}
+              </div>
+          </div>
+    </>
+
     )
 }
 

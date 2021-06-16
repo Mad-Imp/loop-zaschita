@@ -1,0 +1,32 @@
+@import "../../../scss/variables";
+
+
+
+.wrap {
+  max-width: 500px;
+  margin-bottom: 3rem;
+
+  a {
+    text-decoration: none;
+    color: $fontColor;
+  }
+}
+
+.item {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-top: 1px solid rgba(139, 138, 138, 0.27);
+  border-bottom: 1px solid rgba(139, 138, 138, 0.27);
+  max-height: 160px;
+}
+
+.title {
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.date {
+  font-size: 0.9rem;
+  color: #979797;
+  font-weight: 500;
+}
