@@ -48,16 +48,9 @@
   display: flex;
   justify-content: space-between;
 
-  img {
-    width: 365px;
-    height: 281px;
+  .photo {
     object-fit: contain;
     margin-right: 3rem;
-  }
-
-  img:nth-child(1) {
-    width: 420px;
-    height: 315px;
   }
 
   .description {
@@ -88,6 +81,7 @@
 }
 
 .row {
+  width: 100%;
   display: flex;
   margin-bottom: 3rem;
 }
@@ -134,6 +128,13 @@
   }
 }
 
+.news {
+  a {
+    text-decoration: none;
+    color: $fontColor;
+  }
+}
+
 @media (max-width: 1230px) {
   .main {
     margin-left: 1.5rem;
@@ -141,24 +142,24 @@
   }
 
   .container {
-    img {
-      width: 400px;
-      height: 308px;
+    justify-content: center;
+    .photo {
       margin-top: 1.5rem;
-    }
-  }
 
-  .info {
-    max-width: 60%;
+    }
   }
 
   .row {
     flex-direction: column;
+    //text-align: center;
+    align-items: center;
     margin-bottom: 5rem;
   }
 
   .targets {
     flex-direction: column-reverse;
+    align-items: center;
+    width: 100%;
   }
 
 }
@@ -171,7 +172,7 @@
   }
 
   .container {
-    flex-wrap: wrap;
+
   }
 
   .item {
@@ -184,11 +185,73 @@
 }
 
 @media (max-width: 800px) {
+  .info {
+    padding-right: 20px;
+    width: 100%;
+  }
+  .main {
+    width: 88%;
+  }
+
+  .wrap {
+    width: 100%;
+    margin: 0;
+  }
+
+  .container {
+    width: 100%;
+    flex-wrap: wrap;
+
+
+    .info {
+
+      .row {
+        width: 100%;
+
+        .description {
+         width: 100%;
+          margin: 0;
+
+        }
+    }
+
+    .photo {
+      margin-right: 0;
+      width: 280px;
+      object-fit: cover;
+    }
+    }
+  }
   .item {
     width: 100%;
   }
 
-  .news {
+  .seconddescription {
     width: 100%;
+
+    h3 {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  }
+  .list {
+    width: 100%;
+  }
+
+    .count {
+      min-width: 140px;
+      margin: 0;
+      padding: 0;
+    }
+
+
+
+  .cards {
+    display: none;
+  }
+
+  .news {
+    width: 90%;
   }
 }

@@ -3,6 +3,7 @@ import Cards from '../../components/cards/Cards'
 import News from './news/News'
 import {v4 as uuidv4} from 'uuid'
 import {useEffect, useState} from 'react'
+import {Link} from "react-router-dom"
 
 
 
@@ -54,16 +55,16 @@ function Main() {
             <div className={styles.row}>
               <div className={styles.description}>
                 <h2 className={styles.subtitle}>Для тех, кто нуждается в помощи, но не знает, как её найти</h2>
-                <p className={styles.description}>Липецкое областное объединение потребителей (ЛООП) «ЗАЩИТА» - первая в
+                <p>Липецкое областное объединение потребителей (ЛООП) «ЗАЩИТА» - первая в
                   России социально ориентированная некоммерческая организация – исполнитель общественно полезной услуги
                   «содействие в предоставлении бесплатной юридической помощи (СО НКО - ИОПУ).</p>
                 <p className={styles.highlight}>Для тех, кто верит, что право – защита его прав.</p>
               </div>
-              <img src="./home_1.jpg" alt="Правовое просвещение"/>
+              <img className={styles.photo} src="./home_1.jpg" alt="Правовое просвещение"/>
             </div>
             <div className={styles.targets}>
-              <img src="./home_2.jpg" alt="Благотворительная правовая помощь"/>
-              <div>
+              <img className={styles.photo}  src="./home_2.jpg" alt="Благотворительная правовая помощь"/>
+              <div className={styles.seconddescription}>
                 <h3>Основные цели и задачи объединения</h3>
                 <ul className={styles.list}>
                   <li>Содействие становлению гражданского общества и его институтов в Липецкой области</li>
@@ -106,7 +107,7 @@ function Main() {
           </div>
           <div className={styles.news}>
             <h2>Последние новости</h2>
-            {lastNews ? <News lastnews={lastNews}/> : null}
+            {lastNews ? <Link to='/news'><News lastnews={lastNews}/></Link> : null}
           </div>
         </div>
       </div>
