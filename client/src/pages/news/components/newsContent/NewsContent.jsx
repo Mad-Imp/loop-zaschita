@@ -7,7 +7,7 @@ import Chip from '@material-ui/core/Chip';
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 import Slider from "./slider/Slider";
 import {useContext, useState} from 'react';
-import {AddNews} from '../../../dashboard/components/ControlPanel/components/MenuSection/components/AddNews/AddNews';
+import {AddNews} from '../../../dashboard/components/AddNews/AddNews';
 import {AuthContext} from '../../../../context/AuthContext';
 import {useAuth} from '../../../../hooks/auth.hook';
 

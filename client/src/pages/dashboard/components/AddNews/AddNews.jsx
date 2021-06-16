@@ -174,9 +174,9 @@ function AddNews(props = {}) {
         }
     }, [counter])
 
-    return (
-        <div className={styles.wrap}>
-            <TextField
+    return (<> <h1 style={{fontWeight: '500', marginLeft: '1.5rem'}}>Добавить новость</h1>
+          <div className={styles.wrap}>
+              <TextField
                 className={classes.header}
                 id="outlined-textarea"
                 label="Заголовок новости"
@@ -186,8 +186,8 @@ function AddNews(props = {}) {
                 onChange={headerHandler}
                 multiline
                 variant="outlined"
-            />
-            <TextField
+              />
+              <TextField
                 id="outlined-textarea"
                 className={classes.article}
                 label="Текст новости"
@@ -219,6 +219,7 @@ function AddNews(props = {}) {
                 })}
             </div>
         </div>
+        </>
     )
 }
 

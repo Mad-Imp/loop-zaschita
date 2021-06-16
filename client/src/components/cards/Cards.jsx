@@ -14,7 +14,7 @@ function Cards() {
       description: "Доступная юридическая помощь, как фактор повышения качества жизни людей",
       color: "#F2F2FF",
       image: "./tree.png",
-      link: ''
+      link: '/social_project'
     },
     {
       id: 2,
@@ -22,7 +22,7 @@ function Cards() {
       description: null,
       color: "#ffe9da",
       image: "./puzzle.png",
-      link: ''
+      link: '/partners'
     },
     {
       id: 3,

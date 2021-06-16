@@ -13,7 +13,9 @@ import Videos from "../pages/videos/Videos";
 import {useAuth} from '../hooks/auth.hook';
 import ScrollButton from "../components/scrollButton/ScrollButton";
 import PrivacyPolicy from '../pages/privacyPolicy/PrivacyPolicy'
+import SocialProject from '../pages/socialProject/SocialProject'
 import ScrollToTop from '../components/ScrollToTop'
+import {Partners} from '../pages/partners/Partners'
 
 function App() {
   const {token, login, logout, id, role} = useAuth()
@@ -46,6 +48,8 @@ function App() {
                 </Route>
                 <Route path="/videos" component={Videos}/>
                 <Route path='/policy' component={PrivacyPolicy}/>
+                <Route path='/social_project' component={SocialProject}/>
+                <Route path='/partners' component={Partners}/>
                 <Route component={NotFound}/>
               </Switch>
             </main>
