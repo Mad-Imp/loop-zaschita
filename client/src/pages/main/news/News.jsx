@@ -1,3 +1,4 @@
+import {v4 as uuidv4} from "uuid";
 import styles from './News.module.scss'
 import {Link} from "react-router-dom"
 
@@ -13,17 +14,17 @@ export default function News() {
       date: '12.06.2021'
     },
     {
-      title: 'Выездные Бесплатные Юридические Консультации В Сельские Поселения Долгоруковского Района',
+      title: 'Выездные Бесплатные ',
       date: '12.06.2021'
     },
   ]
 
   return <div className={styles.wrap}>
-    {newsItem.map((item, index) => (
-      <Link to='/news'>
-        <div className={styles.item} key={index}>
-         <h3 className={styles.title}>{item.title.length > 100
-           ? `${item.title.substr(0, 100)}...`
+    {newsItem.map(item => (
+      <Link to='/news' key={uuidv4()}>
+        <div className={styles.item}>
+         <h3 className={styles.title}>{item.title.length > 90
+           ? `${item.title.substr(0, 90)}...`
            : item.title}</h3>
           <p className={styles.date}>{item.date}</p>
         </div>

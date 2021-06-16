@@ -1,6 +1,7 @@
 import styles from './Main.module.scss'
 import Cards from '../../components/cards/Cards'
 import News from './news/News'
+import {v4 as uuidv4} from 'uuid'
 
 
 function Main() {
@@ -33,8 +34,8 @@ function Main() {
       <div className={styles.wrap}>
         <h1 className={styles.title}>Юридические услуги для граждан и предпринимателей</h1>
         <div className={styles.container}>
-          <div style={{display: 'flex', flexWrap: 'wrap'}}>
-            <div style={{display: 'flex'}}>
+          <div className={styles.info}>
+            <div className={styles.row}>
               <div className={styles.description}>
                 <h2 className={styles.subtitle}>Для тех, кто нуждается в помощи, но не знает, как её найти</h2>
                 <p className={styles.description}>Липецкое областное объединение потребителей (ЛООП) «ЗАЩИТА» - первая в
@@ -44,8 +45,8 @@ function Main() {
               </div>
               <img src="./home_1.jpg" alt="Правовое просвещение"/>
             </div>
-            <div style={{display: 'flex'}}>
-              <img src="./home_2.jpg" alt=""/>
+            <div className={styles.targets}>
+              <img src="./home_2.jpg" alt="Благотворительная правовая помощь"/>
               <div>
                 <h3>Основные цели и задачи объединения</h3>
                 <ul className={styles.list}>
@@ -65,8 +66,8 @@ function Main() {
         </div>
         <div className={styles.numbers}>
           {
-            numbers.map((item, index) =>
-              (<div key={index + 'fkldk'} className={styles.count}>
+            numbers.map(item =>
+              (<div key={uuidv4()} className={styles.count}>
                 <span className={styles.number}>{item.num}</span>
                 <p>{item.descr}</p>
               </div>)
@@ -91,13 +92,8 @@ function Main() {
             <h2>Последние новости</h2>
             <News/>
           </div>
-
-        </div>
-
-
-      </div>
-
-
+        </div> {/*container*/}
+      </div> {/*wrap*/}
     </div>
   )
 }
