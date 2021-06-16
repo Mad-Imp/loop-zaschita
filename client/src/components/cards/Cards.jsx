@@ -1,3 +1,4 @@
+import {v4 as uuidv4} from "uuid";
 import styles from './Cards.module.scss'
 import Card from '../card/Card';
 import {useState} from 'react';
@@ -38,7 +39,7 @@ function Cards() {
       <div className={styles.wrap}>
         {
           cardsInfo.map((item) => (
-            <Link key={item.id + 'b'} to={item.link}>
+            <Link key={uuidv4()} to={item.link}>
               <Card title={item.title} color={item.color} description={item.description} image={item.image}/>
             </Link>
 

@@ -1,4 +1,5 @@
 import styles from './ServicesList.module.scss';
+import {v4 as uuidv4} from "uuid";
 
 export default function ServicesList() {
     const services = [
@@ -13,8 +14,8 @@ export default function ServicesList() {
 
     return <div className={styles.content}>
         <h2 className={styles.title}>Наши услуги</h2>
-        {services.map((item, index) => {
-            return <p className={styles.paragraph} key={index}>{item}</p>
+        {services.map(item => {
+            return <p className={styles.paragraph} key={uuidv4()}>{item}</p>
         })}
     </div>
 }

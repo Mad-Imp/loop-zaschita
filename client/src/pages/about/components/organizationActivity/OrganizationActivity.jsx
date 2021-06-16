@@ -1,3 +1,4 @@
+import {v4 as uuidv4} from "uuid";
 import styles from './OrganizationActivity.module.scss';
 
 export default function OrganizationActivity() {
@@ -58,8 +59,8 @@ export default function OrganizationActivity() {
             </div>
             <div className={styles.item}>
                 <h3>Направления деятельности:</h3>
-                {servicesList.map((item, index) => (
-                    <p className={styles.clause} key={index}>{item}</p>
+                {servicesList.map(item => (
+                    <p className={styles.clause} key={uuidv4()}>{item}</p>
                 ))}
             </div>
         </div>
