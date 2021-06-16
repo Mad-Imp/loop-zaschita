@@ -2,9 +2,13 @@ import styles from './Main.module.scss'
 import Cards from '../../components/cards/Cards'
 import News from './news/News'
 import {v4 as uuidv4} from 'uuid'
+import {useEffect, useState} from 'react'
+
 
 
 function Main() {
+
+  const [lastNews, setLastNews] = useState(null)
 
   const numbers = [
     {
@@ -28,6 +32,18 @@ function Main() {
       descr: 'Тысяч восстановленных в правах вкладчиков'
     },
   ]
+
+  useEffect(() => {
+    fetch('/lastnews')
+      .then(response => {
+        return response.json()
+      })
+      .then(data => {
+        console.log(data)
+        setLastNews(data)
+      })
+  }, [])
+
 
   return (
     <div className={styles.main}>
@@ -90,10 +106,10 @@ function Main() {
           </div>
           <div className={styles.news}>
             <h2>Последние новости</h2>
-            <News/>
+            {lastNews ? <News lastnews={lastNews}/> : null}
           </div>
-        </div> {/*container*/}
-      </div> {/*wrap*/}
+        </div>
+      </div>
     </div>
   )
 }
