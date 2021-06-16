@@ -1,27 +1,12 @@
 import styles from './News.module.scss'
 import {Link} from "react-router-dom"
 
-export default function News() {
-
-  const newsItem = [
-    {
-      title: 'Выездные Бесплатные Юридические Консультации В Сельские Поселения Данковского Района',
-      date: '12.06.2021'
-    },
-    {
-      title: 'Заголовок второй новости заголовок второй новости заголовок второй новости заголовок второй новости заголовок второй новости заголовок второй новости заголовок второй новости заголовок второй новости',
-      date: '12.06.2021'
-    },
-    {
-      title: 'Выездные Бесплатные Юридические Консультации В Сельские Поселения Долгоруковского Района',
-      date: '12.06.2021'
-    },
-  ]
+export default function News(props) {
 
   return <div className={styles.wrap}>
-    {newsItem.map((item, index) => (
+    {props.lastnews.map((item, index) => (
       <Link to='/news'>
-        <div className={styles.item} key={index}>
+        <div className={styles.item} key={index + '234234'}>
          <h3 className={styles.title}>{item.title.length > 100
            ? `${item.title.substr(0, 100)}...`
            : item.title}</h3>

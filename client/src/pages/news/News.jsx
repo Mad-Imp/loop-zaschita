@@ -42,7 +42,6 @@ function News() {
           })
           .then(data => {
               setNews(data.reverse())
-              console.log('Я ВСЕ ИЗМЕНИЛ')
           })
     }, [count])
 

@@ -164,14 +164,14 @@ function AddNews(props = {}) {
         }
         return () => {
         }
-    }, [file])
+    }, [file]) // eslint-disable-line
 
     useEffect(() => {
         if (header === '' && article === '' && images.length === 0 && counter !== 0) {
             props.count()
             props.show()
         }
-    }, [counter])
+    }, [counter]) // eslint-disable-line
 
     return (<> <h1 style={{fontWeight: '500', marginLeft: '1.5rem'}}>Добавить новость</h1>
           <div className={styles.wrap}>
