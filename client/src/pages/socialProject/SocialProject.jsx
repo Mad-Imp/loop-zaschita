@@ -26,7 +26,7 @@ export default function SocialProject() {
         </div>
         <div className={styles.item}>
           <img src="./social_project_1.jpg" alt="Правовое просвещение"/>
-          <img src="./social_project_2.JPG" alt=""/>
+          <img src="./social_project_2.JPG" alt="Бесплатная правовая помощь"/>
         </div>
       </div>
     </div>

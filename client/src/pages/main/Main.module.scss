@@ -142,16 +142,13 @@
   }
 
   .container {
-    justify-content: center;
     .photo {
       margin-top: 1.5rem;
-
     }
   }
 
   .row {
     flex-direction: column;
-    //text-align: center;
     align-items: center;
     margin-bottom: 5rem;
   }
@@ -171,10 +168,6 @@
     }
   }
 
-  .container {
-
-  }
-
   .item {
     width: 48%;
   }
@@ -182,20 +175,38 @@
   .news {
     width: 48%;
   }
+
+  .title {
+    margin-bottom: 2rem;
+  }
 }
 
 @media (max-width: 800px) {
+  .title {
+    font-size: 1.7rem;
+    margin-bottom: 0;
+  }
+
   .info {
     padding-right: 20px;
     width: 100%;
   }
   .main {
     width: 88%;
-  }
 
-  .wrap {
-    width: 100%;
-    margin: 0;
+    .wrap {
+      width: 100%;
+      margin: 0;
+
+      .numbers {
+        padding-bottom: 3rem;
+        margin-bottom: 1.5rem;
+        .count {
+          margin-right: 1rem;
+          margin-bottom: 1rem;
+        }
+      }
+    }
   }
 
   .container {
@@ -207,6 +218,7 @@
 
       .row {
         width: 100%;
+        margin-bottom: 2rem;
 
         .description {
          width: 100%;
@@ -245,13 +257,25 @@
       padding: 0;
     }
 
-
-
   .cards {
     display: none;
   }
 
   .news {
     width: 90%;
+    h2 {
+      margin-top: 3rem;
+    }
   }
 }
+
+@media (max-width: 355px) {
+  .main {
+  .wrap {
+  .numbers {
+
+    .count {
+      max-width: 90%;
+      text-align: center;
+    }
+  }}}}
