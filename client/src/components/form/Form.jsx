@@ -69,7 +69,6 @@ export default function Form({setOpen}) {
         if (res.status === 200) {
           setMessage('Спасибо за обращение! Мы ответим в ближайшее время')
           e.target.reset()
-            setTimeout(() => setOpen(false), 3000)
         } else {
           setMessage('Произошла ошибка. Попробуйте еще раз')
         }
