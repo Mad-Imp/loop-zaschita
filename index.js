@@ -115,7 +115,15 @@ app.get('/api/news', (req, res) => {
   db.query(sql, (err, results, fields) => {
     if (err) throw err
     res.send(results)
-  });
+  })
+})
+
+app.get('/lastnews', (req, res) => {
+  let sql = "SELECT * FROM `news` ORDER BY id DESC LIMIT 3"
+  db.query(sql, (err, results, fields) => {
+    if (err) throw err
+    res.send(results)
+  })
 })
 
 app.post('/api/delete', (req, res) => {

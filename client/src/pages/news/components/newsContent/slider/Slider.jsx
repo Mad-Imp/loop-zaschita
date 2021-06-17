@@ -1,3 +1,4 @@
+import {v4 as uuidv4} from "uuid";
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import {useState} from "react";
@@ -29,8 +30,8 @@ export default function Slider({images}) {
                                     onClick={handleClickPrev}/>
                 {imagesArr.map((img, index) => (
                     index === slideIndex
-                        ? <img className={`${styles.slide} ${styles.show}`} alt="Фотоотчет" src={img} key={index + "anbsd"}/>
-                        : <img className={`${styles.slide} ${styles.hide}`} alt="Фотоотчет" src={img} key={index + 'amanbsdmnab'}/>
+                        ? <img className={`${styles.slide} ${styles.show}`} alt="Фотоотчет" src={img} key={uuidv4()}/>
+                        : <img className={`${styles.slide} ${styles.hide}`} alt="Фотоотчет" src={img} key={uuidv4()}/>
                 ))}
                 <NavigateNextIcon className={styles.nextBtn}
                                   fontSize="large"
@@ -38,10 +39,10 @@ export default function Slider({images}) {
             </div>
             : imagesArr.map((img, index) => (
                 index === slideIndex
-                    ? <div className={styles.slides} key={index + 'bmnabsmdnbas'}>
+                    ? <div className={styles.slides} key={uuidv4()}>
                         <img className={`${styles.slide} ${styles.show}`} alt="Фотоотчет" src={img} />
                     </div>
-                    : <div className={styles.slides} key={index + 'kkbajsbdkajb'}>
+                    : <div className={styles.slides} key={uuidv4()}>
                         <img className={`${styles.slide} ${styles.hide}`} alt="Фотоотчет" src={img} />
                     </div>
             ))

@@ -1,3 +1,4 @@
+import {v4 as uuidv4} from "uuid";
 import {makeStyles} from '@material-ui/core/styles';
 import Timeline from '@material-ui/lab/timeline';
 import TimelineItem from '@material-ui/lab/TimelineItem';
@@ -91,8 +92,8 @@ export default function CustomizedTimeline() {
     return (
         <>
             <Timeline align="alternate" className={classes.timeline}>
-                {timelineContent.map((item, index) => {
-                    return <TimelineItem className={classes.item} key={index}>
+                {timelineContent.map(item => {
+                    return <TimelineItem className={classes.item} key={uuidv4()}>
                         <TimelineSeparator>
                             <TimelineDot className={classes.dot}/>
                             <TimelineConnector/>
@@ -108,8 +109,8 @@ export default function CustomizedTimeline() {
             </Timeline>
 
             <div className={classes.mobile}>
-                {timelineContent.map((item, index) => {
-                    return <div key={index}>
+                {timelineContent.map(item => {
+                    return <div key={uuidv4()}>
                         <span className={classes.period}>{item.year}</span>
                         <p className={classes.description}>{item.content}</p>
                     </div>

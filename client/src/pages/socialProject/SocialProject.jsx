@@ -28,9 +28,7 @@ export default function SocialProject() {
           <img src="./social_project_1.jpg" alt="Правовое просвещение"/>
           <img src="./social_project_2.JPG" alt=""/>
         </div>
-      </div>-
-
-
+      </div>
     </div>
   )
 }

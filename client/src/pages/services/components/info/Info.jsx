@@ -1,3 +1,4 @@
+import {v4 as uuidv4} from "uuid";
 import styles from './Info.module.scss';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -20,8 +21,8 @@ export default function Info() {
                 <h2 className={styles.title}>Категории граждан, которым оказываются
                     бесплатные юридические консультации
                     в&nbsp;ЛООП&nbsp;«Защита»:</h2>
-                {categoryCitizens.map((item, index) => {
-                    return <p className={styles.paragraph} key={index}>{item}</p>
+                {categoryCitizens.map(item => {
+                    return <p className={styles.paragraph} key={uuidv4()}>{item}</p>
                 })}
                 <p className={styles.note}>Для остальных категорий граждан услуги оказываются
                     по существенно низкой цене, отличающейся от стоимости

@@ -1,4 +1,5 @@
 import styles from './PrivacyPolicy.module.scss'
+import {v4 as uuidv4} from "uuid";
 
 export default function PrivacyPolicy() {
     const items = [
@@ -75,12 +76,12 @@ export default function PrivacyPolicy() {
     return (
         <div className={styles.wrap}>
             <h1 className={styles.title}>Политика в отношении обработки персональных данных</h1>
-            {items.map((item, index) => (
-                <div className={styles.item} key={index}>
+            {items.map(item => (
+                <div className={styles.item} key={uuidv4()}>
                     <h2 className={styles.subtitle}>{item.title}</h2>
                     <p>{item.description}</p>
-                    <ol className={styles.list}> {item.list.map((p, index) => (
-                        <li key={index}>{p}</li>
+                    <ol className={styles.list}> {item.list.map(p => (
+                        <li key={uuidv4()}>{p}</li>
                     ))}
                     </ol>
                 </div>

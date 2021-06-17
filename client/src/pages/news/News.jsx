@@ -6,6 +6,7 @@ import NewsItem from "./components/newsItem/NewsItem";
 import NewsContent from "./components/newsContent/NewsContent";
 import Cards from '../../components/cards/Cards';
 import LinearProgress from '@material-ui/core/LinearProgress';
+import {v4 as uuidv4} from "uuid";
 
 function News() {
     const [news, setNews] = useState([]);
@@ -42,7 +43,6 @@ function News() {
           })
           .then(data => {
               setNews(data.reverse())
-              console.log('Я ВСЕ ИЗМЕНИЛ')
           })
     }, [count])
 
@@ -55,7 +55,7 @@ function News() {
                     <Switch>
                         <Route exact path="/news">
                             {currentNews.map(newsItem => (
-                                <NewsItem news={newsItem} key={newsItem.id}/>
+                                <NewsItem news={newsItem} key={uuidv4()}/>
                             ))}
                             <Pagination className={styles.pagination}
                                         page={currentPage}
