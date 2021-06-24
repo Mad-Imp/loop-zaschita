@@ -84,6 +84,7 @@ app.post('/api/publish', function (req, res, next) {
 
   let date = "" + new Date().toLocaleDateString()
 
+
   if (post.images.length === 0) {
     post.images = 0
   }
@@ -151,7 +152,7 @@ app.post('/api/refreshnews', (req, res) => {
 app.post('/postemail', (req, res) => {
   const message = {
     from: "<zaschita@zaschita48lip.ru>",
-    to: 'mortido3@mail.ru',
+    to: 'hrloph@mail.ru',
     subject: "Обращение с сайта",
     html: ` 
     <h1>Данное обращение пришло с сайта: zaschita48lip.ru</h1>
