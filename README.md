@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# SPA приложение для Липецкого областного объединения потребителей "Защита".
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Рабочая версия сайта в интернете - http://zaschita48lip.ru
 
-## Available Scripts
+## Требования к сайту
 
-In the project directory, you can run:
+Создании SPA с возможностью публикации новостей (в виде текста и фотоматериалов), а так же их последующего редактирования и удаления. Авторизация по JWT токену. REST api.
 
-### `npm start`
+![Добавление, редактирование и удаление новости](http://zaschita48lip.ru/addnews.gif)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Стек технологий
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Frontend
 
-### `npm test`
+`SPA` `React (функциональные компоненты)` `Material-UI` `React Router` `Fetch` 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Основные задачи:
 
-### `npm run build`
+- авторизация клиента по JWT токену
+- получение новостей из базы данных в формате JSON с последующей их отрисовкой
+- маршрутизация (роутинг) страниц с учетом авторизации
+- пагинация
+- форма обратной связи
+- загрузка изображений на сервер в формате formdata
+- добавление новостей
+- редактирование новостей
+- удаление новостей
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Backend
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`Node JS` `Express` `JWT` `bcrypt`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Основные задачи
 
-### `npm run eject`
+- создание http сервера
+- настройка почтового сервера
+- загрузка изображений в статическую папку на хостинге
+- взаимодействие с MySql базой данных
+- формирование данных в формате JSON
+- отправка электронных писем с формы обратной связи
+- авторизация клиента и выдача JWT токена
+- создание API
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+API:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`/api/login` - авторизация пользователей
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+`/upload` - загрузка изображений на хостинг и дальнейшее добавление информации об изображении в базу данных
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+`/api/publish` - публикация новости с внесением в базу данных
 
-## Learn More
+`/api/news` - новости в формате JSON
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`/lastnews` - последние 3 новости в формате JSON
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+`/api/delete` - удаление новости
 
-### Code Splitting
+`/api/refreshnews` - обновление новости
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+`/postemail` - отправка электронных писем с Node сервера
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Базы данных и хостинг
 
-### Making a Progressive Web App
+`My SQL` `SSH` `Docker`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Основные задачи:
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- создание и конфигурация базы данных (таблиц)
+- настройка и запуск приложения через SSH в Docker контейнере
+- установка Node JS на хостинг с последующей настройкой
+- настройка почтового сервера на стороне провайдера
