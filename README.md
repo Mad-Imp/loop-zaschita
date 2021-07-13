@@ -12,7 +12,7 @@
 
 ### Frontend
 
-`SPA` `React (функциональные компоненты)` `Material-UI` `React Router` `Fetch` 
+`SPA` `React (функциональные компоненты)` `Material-UI` `React Router` `Fetch` `SCSS`
 
 Основные задачи:
 
