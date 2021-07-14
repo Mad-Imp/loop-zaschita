@@ -1,0 +1,281 @@
+@import "../../scss/variables";
+
+.main {
+  position: relative;
+  max-width: $widthContent;
+  margin: 0 auto;
+
+  .wrap {
+    h3 {
+      font-weight: 500;
+      margin-bottom: 2rem;
+      font-size: 1.3rem;
+    }
+
+    h2 {
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+
+    .numbers {
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding-top: 3rem;
+      padding-bottom: 4rem;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+      border-top: 1px solid rgba(139, 138, 138, 0.27);
+      border-bottom: 1px solid rgba(139, 138, 138, 0.27);
+
+      .count {
+        max-width: 18%;
+
+        .number {
+          cursor: context-menu;
+          font-size: 4rem;
+          font-weight: 500;
+          color: $primaryColor;
+        }
+      }
+    }
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+
+  .photo {
+    object-fit: contain;
+    margin-right: 3rem;
+  }
+
+  .description {
+    margin-right: 2rem;
+
+    .subtitle {
+      font-weight: 500;
+      margin-left: 0;
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+    }
+
+    p {
+      line-height: 1.5rem;
+    }
+
+    .highlight {
+      font-weight: 500;
+      margin-top: 1rem;
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.info {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  margin-bottom: 3rem;
+}
+
+
+.title {
+  font-weight: 500;
+  margin-right: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.list {
+  list-style-type: none;
+  margin-right: 1rem;
+
+  li {
+    margin-bottom: 1.5rem;
+    padding-left: 8px;
+    border-left: 2px solid $primaryColor
+  }
+}
+
+.item {
+  width: 46%;
+}
+
+.targets {
+  display: flex;
+}
+
+.activities {
+  list-style-type: none;
+  margin-right: 1rem;
+
+
+  li {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-top: 1px solid rgba(139, 138, 138, 0.27);
+  }
+
+  li:last-child {
+    border-bottom: 1px solid rgba(139, 138, 138, 0.27);
+  }
+}
+
+.news {
+  a {
+    text-decoration: none;
+    color: $fontColor;
+  }
+}
+
+@media (max-width: 1230px) {
+  .main {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+
+  .container {
+    .photo {
+      margin-top: 1.5rem;
+    }
+  }
+
+  .row {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5rem;
+  }
+
+  .targets {
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 1040px) {
+  .wrap {
+    h3 {
+      font-size: 1.2rem;
+    }
+  }
+
+  .item {
+    width: 48%;
+  }
+
+  .news {
+    width: 48%;
+  }
+
+  .title {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .title {
+    font-size: 1.7rem;
+    margin-bottom: 0;
+  }
+
+  .info {
+    padding-right: 20px;
+    width: 100%;
+  }
+  .main {
+    width: 88%;
+
+    .wrap {
+      width: 100%;
+      margin: 0;
+
+      .numbers {
+        padding-bottom: 3rem;
+        margin-bottom: 1.5rem;
+        .count {
+          margin-right: 1rem;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+
+  .container {
+    width: 100%;
+    flex-wrap: wrap;
+
+
+    .info {
+
+      .row {
+        width: 100%;
+        margin-bottom: 2rem;
+
+        .description {
+         width: 100%;
+          margin: 0;
+
+        }
+    }
+
+    .photo {
+      margin-right: 0;
+      width: 280px;
+      object-fit: cover;
+    }
+    }
+  }
+  .item {
+    width: 100%;
+  }
+
+  .seconddescription {
+    width: 100%;
+
+    h3 {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  }
+  .list {
+    width: 100%;
+  }
+
+    .count {
+      min-width: 140px;
+      margin: 0;
+      padding: 0;
+    }
+
+  .cards {
+    display: none;
+  }
+
+  .news {
+    width: 90%;
+    h2 {
+      margin-top: 3rem;
+    }
+  }
+}
+
+@media (max-width: 355px) {
+  .main {
+  .wrap {
+  .numbers {
+
+    .count {
+      max-width: 90%;
+      text-align: center;
+    }
+  }}}}

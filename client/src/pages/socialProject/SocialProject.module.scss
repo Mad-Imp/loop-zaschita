@@ -1,0 +1,56 @@
+@import "../../scss/variables";
+
+.title {
+  font-weight: 500;
+  margin-bottom: 3rem;
+}
+.block {
+  display: flex;
+  justify-content: space-between;
+
+  .item {
+    max-width: 46%;
+
+    p {
+      margin-bottom: 1.5rem;
+      line-height: 1.5rem;
+    }
+
+    img {
+      max-height: 370px;
+      max-width: 480px;
+      object-fit: contain;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+@media (max-width: 1230px) {
+  .wrap {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+
+  .block {
+
+    img {
+      width: 350px;
+    }
+  }
+}
+
+@media (max-width: 810px) {
+  .wrap {
+    max-width: 100%;
+  }
+ .block {
+   flex-direction: column;
+   max-width: 100%;
+   align-items: center;
+   text-align: center;
+
+   .item {
+     max-width: 100%;
+   }
+ }
+}

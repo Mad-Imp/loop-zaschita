@@ -1,0 +1,14 @@
+@import "../../../../scss/variables";
+
+.map {
+  max-width: 100%;
+  width: $widthContent;
+  height: 350px;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 480px) {
+  .map {
+    height: 200px;
+  }
+}

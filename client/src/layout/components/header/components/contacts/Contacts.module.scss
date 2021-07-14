@@ -1,0 +1,94 @@
+@import "../../../../../scss/variables";
+
+.wrapper {
+  background-color: $primaryColor;
+  padding: 5px 10px;
+}
+
+.contacts {
+  max-width: $widthContent;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.logo {
+  display: block;
+  width: 40px;
+  height: 40px;
+  z-index: 10;
+}
+
+.wrap {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 2.5rem;
+}
+
+.phone {
+  display: block;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  text-decoration: none;
+  padding-right: 18px;
+  border-right: 1px solid white;
+}
+
+.icon {
+  color: #fff;
+  margin-right: 5px;
+}
+
+
+@media (max-width: 1230px) {
+  .contacts {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+}
+
+@media (max-width: 532px) {
+  .wrap {
+    margin-right: 2.5rem;
+  }
+}
+
+@media (max-width: 488px) {
+  .logo {
+    display: none;
+  }
+}
+
+@media (max-width: 445px) {
+  .wrap {
+    margin: 0 auto;
+
+    .icon {
+      font-size: 1.2rem;
+    }
+  }
+  .phone {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 404px) {
+  .wrap {
+    margin-right: 1rem;
+  }
+}
+
+@media (max-width: 378px) {
+  .wrap {
+    flex-wrap: wrap;
+    justify-content: center;
+
+  }
+  .phone {
+    border: none;
+  }
+}

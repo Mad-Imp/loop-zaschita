@@ -1,0 +1,86 @@
+@import "../../../../scss/variables";
+
+.root {
+  margin: 1rem 2rem 1rem 0;
+  padding: 0 1.1rem;
+  max-width: 70%;
+
+  .title {
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.7rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: $fontColor;
+    transition: all 0.5s ease-out;
+  }
+
+  a:hover {
+    color: $primaryColor;
+  }
+
+  p {
+    color: $fontColor;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 1142px) {
+  .root {
+    max-width: 60%;
+
+    .title {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media (max-width: 895px) {
+  .root {
+    .title {
+      font-size: 1.3rem;
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .root {
+    max-width: 100%;
+    margin: 1rem auto;
+  }
+}
+
+@media (max-width: 630px) {
+  .root {
+    padding: 0;
+
+    .wrap {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .btn {
+        margin-top: 0.5rem;
+      }
+    }
+
+    .title {
+      font-size: 1.1rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+
+
+

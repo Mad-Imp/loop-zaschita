@@ -1,0 +1,48 @@
+@import "../../scss/variables";
+
+.title,
+.subtitle {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.wrap {
+  display: flex;
+}
+
+@media (max-width: 1230px) {
+  .wrap {
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+  }
+}
+
+@media (max-width: 1050px) {
+  .wrap {
+    flex-wrap: wrap;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .title,
+  .subtitle {
+    padding: 0 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .title,
+  .subtitle {
+    text-align: left;
+  }
+}
+
+@media (max-width: 535px) {
+  .title {
+    font-size: 1.7rem;
+  }
+  .subtitle {
+    margin-bottom: 1rem;
+  }
+}

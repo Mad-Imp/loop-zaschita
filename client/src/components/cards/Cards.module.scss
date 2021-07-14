@@ -1,0 +1,23 @@
+@import "../../scss/variables";
+
+.cards {
+  width: 320px;
+  height: 700px;
+
+  .wrap {
+    height: 100%;
+    width: 100%;
+
+    a {
+      text-decoration: none;
+      color: $fontColor;
+    }
+  }
+}
+
+@media (max-width: 895px) {
+  .cards {
+    width: 250px;
+    right: 1.1rem;
+  }
+}

@@ -1,0 +1,16 @@
+@import "../../../../scss/variables";
+
+.title {
+  margin: 1rem 0;
+  padding-left: 8px;
+  font-size: 1.7rem;
+  font-weight: 400;
+  border-left: 2px solid $primaryColor;
+}
+
+@media (max-width: 1024px) {
+  .title {
+    margin-left: 1rem;
+    margin-bottom: 2rem;
+  }
+}
