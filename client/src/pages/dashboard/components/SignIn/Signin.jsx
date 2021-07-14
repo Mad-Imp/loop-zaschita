@@ -1,9 +1,9 @@
-import {makeStyles} from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
+import {makeStyles} from '@material-ui/core/styles'
+import TextField from '@material-ui/core/TextField'
 import styles from './Signin.module.scss'
-import Button from '@material-ui/core/Button';
-import {useContext, useState} from 'react';
-import {AuthContext} from '../../../../context/AuthContext';
+import Button from '@material-ui/core/Button'
+import {useContext, useState} from 'react'
+import {AuthContext} from '../../../../context/AuthContext'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,11 +15,11 @@ const useStyles = makeStyles((theme) => ({
   btn: {
     marginTop: '30px',
   }
-}));
+}))
 
 function SignIn(props) {
 
-  const classes = useStyles();
+  const classes = useStyles()
   const [email, setEmail] = useState('')
   const [pass, setPass] = useState('')
   const auth = useContext(AuthContext)
@@ -57,32 +57,33 @@ function SignIn(props) {
   }
 
   return (
-    <div className={styles.content} >
-      <h2>Данные для входа в панель управления</h2>
-      <form className={classes.root} noValidate autoComplete="off">
-        <div className={styles.wrap}>
+    <div className={styles.content}>
+      <div className={styles.wrapper}>
+        <h2>Данные для входа в панель управления</h2>
+        <form className={classes.root} noValidate autoComplete="off">
+          <div className={styles.wrap}>
+            <TextField
+              type="email"
+              onChange={emailhandler}
+              value={email}
 
-          <TextField
-            type='email'
-            onChange={emailhandler}
-            value={email}
+              label="Email"
+              name="email"
+            />
+            <TextField
+              type="password"
+              onChange={passHandler}
+              value={pass}
 
-            label="Email"
-            name='email'
-          />
-          <TextField
-            type='password'
-            onChange={passHandler}
-            value={pass}
-
-            label="Пароль"
-            name='password'
-          />
-          <Button onClick={onSubmit} type='submit' variant="contained" color="primary" className={classes.btn}>
-            Войти
-          </Button>
-        </div>
-      </form>
+              label="Пароль"
+              name="password"
+            />
+            <Button onClick={onSubmit} type="submit" variant="contained" color="primary" className={classes.btn}>
+              Войти
+            </Button>
+          </div>
+        </form>
+      </div>
     </div>
   )
 }
