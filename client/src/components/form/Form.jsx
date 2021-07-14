@@ -43,7 +43,7 @@ const schema = yup.object().shape({
         .email('Введите корректный e-mail')
         .required('Введите e-mail'),
     text: yup.string()
-        .matches(/^[^< >]*$/, 'В тексте не могут содержаться символы < >')
+        .matches(/^[^<>]*$/, 'В тексте не могут содержаться символы < >')
         .required('Введите ваш вопрос'),
 })
 
