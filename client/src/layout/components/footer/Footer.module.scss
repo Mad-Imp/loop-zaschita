@@ -1,0 +1,88 @@
+@import "./src/scss/variables";
+
+.footer {
+  width: 100%;
+  padding: 2rem 0;
+  background: rgba(242, 242, 242, 0.59);
+  margin-top: 3rem;
+}
+.wrap {
+  max-width: $widthContent;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  .info {
+    text-align: left;
+    font-size: 1.05rem;
+
+    .contacts {
+      font-weight: 500;
+      font-size: 1.1rem;
+      border-bottom: 1px solid #a0a0a0;
+      padding-bottom: 6px;
+    }
+
+    .content {
+      display: flex;
+      align-items: center;
+
+      .icon {
+        margin-right: 1rem;
+        color: $primaryColor;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: $fontColor;
+    }
+  }
+
+  p {
+    margin: 0.8rem 0;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      padding-bottom: 4px;
+    }
+
+    a {
+      text-decoration: none;
+      color: $fontColor;
+      border-bottom: 1px solid $primaryColor;
+      transition: 0.9s;
+    }
+
+    a:hover {
+      color: $primaryColor;
+      transition: 0.9s;
+    }
+  }
+}
+
+@media (max-width: 1240px) {
+  .wrap {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+}
+
+@media (max-width: 607px) {
+  .wrap {
+    justify-content: center;
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 481px) {
+  .footer {
+   margin-top: 1.5rem;
+  }
+}

@@ -1,0 +1,82 @@
+@import "../../../../../scss/variables";
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: $widthContent;
+  max-height: 50vh;
+  padding: 20px 0;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  max-width: 300px;
+}
+
+.name {
+  text-transform: uppercase;
+  font-size: 2.2rem;
+}
+
+.description {
+  max-width: 310px;
+  font-weight: 500;
+  line-height: 1.35rem;
+}
+
+@media (max-width: 1230px) {
+  .container {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+}
+
+@media (max-width: 933px) {
+  .container {
+    max-width: 95%;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+  }
+  .item,
+  .item_name,
+  .description {
+    max-width: 60%;
+    margin: 0 auto 1rem;
+    text-align: center;
+  }
+  .item_name {
+    order: -1;
+  }
+  .title {
+    margin: 0 auto
+  }
+}
+
+@media (max-width: 560px) {
+  .item,
+  .item_name,
+  .description {
+    max-width: 100%;
+  }
+  .title {
+    font-size: 1.05rem;
+  }
+  .description {
+    font-size: 0.9rem;
+  }
+  .name {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 532px) {
+  .container {
+    border-bottom: 1px solid rgba(139, 138, 138, 0.27);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+  }
+}

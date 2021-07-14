@@ -1,0 +1,26 @@
+@import "../../scss/variables";
+
+.btn {
+  background-color: transparent;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  padding: 7px 9px;
+  margin-left: 9px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  transition-duration: .8s;
+}
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.13);
+  color: #fff;
+  transition-duration: .8s;
+  cursor: pointer;
+}
+
+.btn:focus,
+.btn:active {
+  outline: white;
+}

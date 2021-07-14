@@ -1,0 +1,53 @@
+@import "../../scss/variables";
+
+.form {
+  max-width: 700px;
+  width: 100%;
+
+  h2 {
+    color: $fontColor;
+    margin-left: 8px;
+    font-size: 2rem;
+    font-weight: 500;
+  }
+}
+
+.answer {
+  color: $primaryColor;
+  font-weight: 500;
+  margin-left: 8px;
+  margin-top: 1rem;
+}
+
+@media (max-width: 1132px) {
+  .form {
+    max-width: 600px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1032px) {
+  .form {
+    max-width: 500px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 932px) {
+  .form {
+    max-width: 850px;
+    margin: 0 auto;
+  }
+
+  h2 {
+    margin-top: 1.5rem;
+    //text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.7rem;
+  }
+
+}

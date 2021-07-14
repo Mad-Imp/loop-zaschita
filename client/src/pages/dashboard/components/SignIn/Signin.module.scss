@@ -1,0 +1,36 @@
+@import "../../../../scss/variables";
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.content {
+  width: 100%;
+  display: flex;
+}
+
+.wrapper {
+  display: flex;
+  width: 500px;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+
+.root {
+
+}
+
+@media (max-width: 800px) {
+
+  .wrapper {
+    padding-bottom: 100px;
+    padding-top: 100px;
+  }
+}

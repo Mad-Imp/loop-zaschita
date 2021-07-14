@@ -1,0 +1,37 @@
+@import "../../../../scss/variables";
+
+.content {
+  margin: 2.5rem 0 2.5rem 2.5rem;
+  max-width: 38rem;
+}
+
+.title {
+  margin: 0 0 2rem 0;
+  border-bottom: 2.5px solid $primaryColor;
+  padding-bottom: 1rem;
+}
+
+.paragraph {
+  border-left: 2px solid #4673b5;
+  margin: 1rem 1.3rem 1rem 0;
+  padding-left: 8px;
+  line-height: 1.5rem;
+}
+
+.highlight {
+  font-weight: 500;
+  color: $fontColor;
+}
+
+@media (max-width: 1230px) {
+  .paragraph {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 1050px) {
+  .content {
+    max-width: 90%;
+    margin: 1.7rem auto;
+  }
+}
