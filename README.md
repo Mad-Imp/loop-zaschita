@@ -66,7 +66,7 @@ API:
 
 ### Базы данных и хостинг
 
-`My SQL` `SSH` `Docker`
+`MySQL` `SSH` `Docker`
 
 Основные задачи:
 
