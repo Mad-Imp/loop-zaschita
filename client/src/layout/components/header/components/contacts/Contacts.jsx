@@ -9,9 +9,16 @@ function Contacts() {
     const [open, setOpen] = useState(false)
 
     const closePopup = (e) => {
-        if (e.target.id === 'overlay' || e.target.id === 'close') {
+        if (e.target.id === 'overlay' || e.currentTarget.id === 'close') {
             setOpen(false)
+            setScroll()
         }
+    }
+    const setHidden = () => {
+        if (!open) document.body.style.overflow = 'hidden'
+    }
+    const setScroll = () => {
+        document.body.style.overflow = 'scroll'
     }
 
     return (
@@ -22,7 +29,10 @@ function Contacts() {
                     <div className={styles.wrap}>
                         <CallIcon className={styles.icon}/>
                         <a className={styles.phone} href="tel:+74742476245">+7(4742) 47-62-45</a>
-                        <Button onClick={() => setOpen(true)} content="Написать нам"/>
+                        <Button onClick={() => {
+                            setOpen(true)
+                            setHidden()
+                        }} content="Написать нам"/>
                         {open && <Popup closePopup={closePopup} setOpen={setOpen}/>}
                     </div>
                 </div>
