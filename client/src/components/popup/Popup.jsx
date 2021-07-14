@@ -4,6 +4,7 @@ import CloseIcon from '@material-ui/icons/Close'
 
 export default function Popup({closePopup, setOpen}) {
 
+
     return (
         <div id="overlay" className={styles.popup} onClick={closePopup}>
             <div className={styles.modalDialog}>
@@ -14,7 +15,6 @@ export default function Popup({closePopup, setOpen}) {
                     </div>
                 </div>
             </div>
-
         </div>
     )
 }
